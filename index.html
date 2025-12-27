@@ -1,3 +1,95 @@
-<html>
-  
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 포트폴리오</title>
+    <style>
+        /* 기본 스타일 설정 */
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #1a1a1a; /* 어두운 배경색 */
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* 중앙 정렬 컨테이너 */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        /* 헤더 부분 */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        p.subtitle { color: #aaa; font-size: 1.1rem; }
+
+        /* 섹션 스타일 */
+        section { margin-bottom: 40px; }
+        h2 { border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 20px; }
+
+        /* 프로젝트 카드 스타일 */
+        .project-card {
+            background: #252525;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border: 1px solid #4a90e2;
+        }
+
+        .tags { color: #4a90e2; font-size: 0.9rem; font-weight: bold; }
+        
+        /* 링크 스타일 */
+        a { color: #4a90e2; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>안녕하세요, 홍길동입니다 👋</h1>
+        <p class="subtitle">효율적인 코드를 지향하는 프론트엔드 개발자입니다.</p>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>어떠한 가치를 창출하기 위해 노력합니다. 기술을 통해 세상을 이롭게 만드는 것에 관심이 많습니다.</p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-card">
+            <div class="tags">#React #Firebase</div>
+            <h3>개인 포트폴리오 웹사이트</h3>
+            <p>현재 보고 계신 깃허브 블로그 포트폴리오입니다.</p>
+            <a href="#">Github에서 보기 →</a>
+        </div>
+
+        <div class="project-card">
+            <div class="tags">#Python #Crawling</div>
+            <h3>날씨 정보 알림 봇</h3>
+            <p>매일 아침 날씨 정보를 요약해서 보내주는 자동화 프로그램입니다.</p>
+            <a href="#">Github에서 보기 →</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>📧 Email: email@example.com</p>
+        <p>🔗 LinkedIn: <a href="#">link</a></p>
+    </section>
+</div>
+
+</body>
 </html>
