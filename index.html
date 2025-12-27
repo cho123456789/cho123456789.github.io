@@ -52,6 +52,32 @@
         
         /* 링크 스타일 */
         a { color: #4a90e2; text-decoration: none; }
+
+
+        /* 타이핑 효과를 위한 스타일 */
+  .typing-txt {
+    display: inline-block;
+    white-space: nowrap; /* 줄바꿈 방지 */
+    overflow: hidden;    /* 글자가 나타나는 효과를 위해 숨김 */
+    border-right: 3px solid #4a90e2; /* 커서 효과 */
+    font-size: 2.5rem;
+    font-weight: bold;
+    
+    /* 애니메이션 설정: typing(글자 쓰기), blink(커서 깜빡임) */
+    animation: typing 3s steps(10) infinite, blink .5s step-end infinite;
+  }
+
+  /* 글자가 써지는 애니메이션 */
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  /* 커서가 깜빡이는 애니메이션 */
+  @keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: #4a90e2; }
+  }
     </style>
 </head>
 <body>
