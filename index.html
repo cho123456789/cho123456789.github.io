@@ -3,45 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>내 포트폴리오</title>
+    <title>조형석 | Android Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <div class="typing-txt">안녕하세요, 조형석입니다.</div>
-        <p class="subtitle">효율적인 코드를 지향하는 프론트엔드 개발자입니다.</p>
-    </header>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <p>어떠한 가치를 창   출하기 위해 노력합니다. 기술을 통해 세상을 이롭게 만드는 것에 관심이 많습니다.</p>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-card">
-            <div class="tags">#React #Firebase</div>
-            <h3>개인 포트폴리오 웹사이트</h3>
-            <p>현재 보고 계신 깃허브 블로그 포트폴리오입니다.</p>
-            <a href="#">Github에서 보기 →</a>
+    <nav>
+        <div class="nav-container">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
         </div>
+    </nav>
 
-        <div class="project-card">
-            <div class="tags">#Python #Crawling</div>
-            <h3>날씨 정보 알림 봇</h3>
-            <p>매일 아침 날씨 정보를 요약해서 보내주는 자동화 프로그램입니다.</p>
-            <a href="#">Github에서 보기 →</a>
-        </div>
-    </section>
+    <div class="container">
+        
+        <header id="home">
+            <div class="header-content">
+                <h1>Hello, I am <span class="highlight">조형석</span></h1>
+                <div class="typing-txt">Android Developer</div>
+                <p class="subtitle">
+                    단순한 앱 개발을 넘어 <strong>안드로이드 OS 환경</strong>에 최적화된 설계를 지향합니다.<br>
+                    사용자에게 <strong>최고의 모바일 경험</strong>을 선사하는 안드로이드 개발자입니다.
+                </p>
+            </div>
+        </header>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>📧 Email: email@example.com</p>
-        <p>🔗 LinkedIn: <a href="#">link</a></p>
-    </section>
-</div>
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="content-box">
+                <p>사용자의 불편함을 기술로 해결하는 과정에서 즐거움을 느낍니다. 안정적인 코드 구조와 지속 가능한 개발 환경을 만드는 것에 관심이 많습니다.</p>
+            </div>
+        </section>
 
-</body>
-</html>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="card">
+                    <div class="tags">#Android #Kotlin #MVVM</div>
+                    <h3>Project Name 01</h3>
+                    <p>프로젝트에 대한 간략한 설명이 들어갑니다. 안드로이드 앱의 핵심 기능과 본인이 기여한 바를 작성하세요.</p>
+                    <a href="#" class="more-link">View Project →</a>
+                </div>
+                <div class="card">
+                    <div class="tags">#Android #Retrofit2 #Hilt</div>
+                    <h3>Project Name 02</h3>
+                    <p>API 연동 및 데이터 관리에 중점을 둔 프로젝트 내용을 기술하면 좋습니다.</p>
+                    <a href="#" class="more-link">View Project →</a>
+                </div>
+            </div>
+        </section>

@@ -1,4 +1,14 @@
-/* 전역 설정 */
+/* --- 변수 설정 (안드로이드 테마) --- */
+:root {
+    --android-primary: #3DDC84;   /* 안드로이드 그린 */
+    --android-bold: #073042;      /* 안드로이드 다크 네이비 */
+    --text-main: #1a1a1a;
+    --text-sub: #70757a;
+    --line-color: #e8eaed;
+    --bg-white: #ffffff;
+}
+
+/* --- 전역 설정 --- */
 * {
     margin: 0;
     padding: 0;
@@ -6,126 +16,205 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* 클릭 시 부드러운 이동 */
 }
 
 body {
     font-family: 'Pretendard', sans-serif;
-    background-color: #ffffff; /* 배경을 하얀색으로 변경 */
-    color: #333333;           /* 글자색을 어두운 회색으로 변경 */
+    background-color: var(--bg-white);
+    color: var(--text-main);
     line-height: 1.7;
 }
 
-/* 네비게이션 바 */
+/* --- 상단 네비게이션 (왼쪽 정렬) --- */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.8); /* 네비바 배경 하얀색 */
+    background-color: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid #eeeeee; /* 구분선 색상 연하게 */
+    border-bottom: 1px solid var(--line-color);
     z-index: 1000;
 }
 
 .nav-container {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 20px;
+    height: 70px;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: flex-start; /* 왼쪽 정렬 */
 }
 
 nav a {
     text-decoration: none;
-    color: #666666; /* 메뉴 글자색 */
-    margin: 0 15px;
-    font-size: 0.9rem;
-    font-weight: 600;
+    color: var(--text-sub);
+    margin-right: 30px;
+    font-size: 0.95rem;
+    font-weight: 700;
     text-transform: uppercase;
-    transition: color 0.3s;
+    transition: 0.3s;
 }
 
 nav a:hover {
-    color: #000000; /* 마우스 올리면 검은색 */
+    color: var(--android-primary);
 }
 
-/* 컨테이너 및 섹션 */
+/* --- 메인 컨테이너 및 섹션 --- */
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 120px 20px;
+    padding: 0 20px;
 }
 
+section {
+    padding: 100px 0;
+    border-bottom: 1px solid var(--line-color);
+}
+
+/* --- 헤더 (가운데 정렬) --- */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 200px 0 150px; /* 상단 네비게이션 공간 확보 */
+}
+
+.header-content {
+    max-width: 800px;
+}
+
+header h1 {
+    font-size: 2.2rem;       /* 크기를 1.6rem에서 2.2rem으로 확대 */
+    color: #000000;          /* 검은색으로 변경 */
+    font-weight: 700;        /* 조금 더 두껍게 설정 */
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: var(--android-primary);
+    font-weight: 900;
+}
+
+/* 타이핑 텍스트 효과 */
+.typing-txt {
+    font-size: 3.2rem;
+    font-weight: 850;
+    color: var(--android-bold);
+    border-right: 5px solid var(--android-primary);
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 20px 0;
+    letter-spacing: -1px;
+    animation: typing 4s steps(30) infinite, blink .6s step-end infinite;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: var(--text-sub);
+    line-height: 1.8;
+    margin: 0 auto;
+    word-break: keep-all;
+}
+
+.subtitle strong {
+    color: var(--android-bold);
+    background: linear-gradient(to top, #3ddc844d 40%, transparent 40%);
+    padding: 0 4px;
+}
+
+/* --- 섹션 제목 --- */
 h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 40px;
-    color: #222222;
-    border-left: 5px solid #007aff; /* 포인트를 파란색으로 변경 */
+    color: var(--android-bold);
+    border-left: 6px solid var(--android-primary);
     padding-left: 15px;
 }
 
-/* 타이핑 애니메이션 */
-.typing-txt {
-    font-size: 3.5rem;
-    font-weight: 800;
-    color: #111111;
-    border-right: 4px solid #007aff;
-    white-space: nowrap;
-    overflow: hidden;
-    display: inline-block;
-    animation: typing 3.5s steps(20) infinite, blink .6s step-end infinite;
-}
-
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes blink {
-    from, to { border-color: transparent; }
-    50% { border-color: #007aff; }
-}
-
-.intro-text {
-    font-size: 1.2rem;
-    color: #666666;
-    margin-top: 10px;
-}
-
-/* 프로젝트 카드 디자인 (하얀색 배경에 맞게 조정) */
+/* --- 프로젝트 카드 --- */
 .project-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
 }
 
 .card {
     background: #fcfcfc;
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid #eeeeee;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02); /* 가벼운 그림자 추가 */
-    transition: 0.3s;
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid var(--line-color);
+    transition: all 0.3s ease;
 }
 
 .card:hover {
-    border-color: #007aff;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-color: var(--android-primary);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
 }
 
+.tags {
+    font-weight: 700;
+    color: var(--android-primary);
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--android-bold);
+}
+
+.more-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--android-primary);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* --- 공통 박스 및 링크 --- */
 .content-box {
     background: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #f0f0f0;
+    padding: 30px;
+    border-radius: 12px;
 }
 
-ul { list-style: none; }
-li { margin-bottom: 10px; }
-
-/* 링크 스타일 */
 a {
-    color: #007aff;
-    text-decoration: none;
+    color: var(--android-primary);
+    transition: 0.3s;
+}
+
+/* --- 푸터 --- */
+footer {
+    text-align: center;
+    padding: 50px 0;
+    color: var(--text-sub);
+    font-size: 0.9rem;
+}
+
+/* --- 애니메이션 정의 --- */
+@keyframes typing { 
+    0%, 10% { width: 0; } 
+    50%, 90% { width: 80%; } 
+    100% { width: 0; } 
+}
+
+@keyframes blink { 
+    from, to { border-color: transparent; } 
+    50% { border-color: var(--android-primary); } 
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+    .typing-txt {
+        font-size: 2rem;
+    }
+    header {
+        padding: 150px 0 100px;
+    }
 }
