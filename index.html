@@ -181,13 +181,15 @@
                     <div class="tags">#Android #Kotlin #MVVM</div>
                     <h3>Project Name 01</h3>
                     <p>프로젝트에 대한 간략한 설명이 들어갑니다. 안드로이드 앱의 핵심 기능과 본인이 기여한 바를 작성하세요.</p>
-                    <a href="#" class="more-link">View Project →</a>
+                    <a href="#" class="more-link"
+                       onclick="openProjectModal('project1'); return false;">View Project →</a>
                 </div>
                 <div class="card">
                     <div class="tags">#Android #Retrofit2 #Hilt</div>
                     <h3>Project Name 02</h3>
                     <p>API 연동 및 데이터 관리에 중점을 둔 프로젝트 내용을 기술하면 좋습니다.</p>
-                    <a href="#" class="more-link">View Project →</a>
+                    <a href="#" class="more-link"
+                       onclick="openProjectModal('project2'); return false;">View Project →</a>
                 </div>
             </div>
         </section>
@@ -229,5 +231,120 @@
         </section>
 
     </div>
+
+    <!-- 프로젝트 모달 -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProjectModal()">&times;</span>
+            <div id="modalBody">
+                <!-- 프로젝트 내용이 여기에 동적으로 삽입됩니다 -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const projectData = {
+            project1: {
+                title: "Project Name 01",
+                tags: ["Android", "Kotlin", "MVVM", "Jetpack Compose"],
+                period: "2023.01 - 2023.06",
+                team: "4명 (Android 2, Backend 1, Designer 1)",
+                role: "Android Developer",
+                description: "사용자 친화적인 모바일 쇼핑 앱을 개발했습니다. MVVM 아키텍처 패턴을 적용하여 유지보수성과 확장성을 높였습니다.",
+                features: [
+                    "RESTful API를 통한 상품 목록 조회 및 검색 기능 구현",
+                    "Room Database를 활용한 로컬 캐싱 시스템 구축",
+                    "Retrofit2와 Coroutine을 이용한 비동기 네트워크 통신",
+                    "Material Design 3 기반의 직관적인 UI/UX 구현",
+                    "ViewModel과 LiveData를 활용한 데이터 바인딩"
+                ],
+                tech: ["Kotlin", "MVVM", "Retrofit2", "Room", "Coroutine", "Material Design 3"],
+                github: "https://github.com/yourname/project1",
+                images: ["project1-1.jpg", "project1-2.jpg"]
+            },
+            project2: {
+                title: "Project Name 02",
+                tags: ["Android", "Retrofit2", "Hilt", "Clean Architecture"],
+                period: "2022.09 - 2022.12",
+                team: "3명 (Android 2, Backend 1)",
+                role: "Android Developer",
+                description: "날씨 정보를 제공하는 Android 애플리케이션을 개발했습니다. Clean Architecture를 적용하여 테스트 가능하고 유지보수하기 쉬운 코드 구조를 만들었습니다.",
+                features: [
+                    "OpenWeather API를 활용한 실시간 날씨 정보 제공",
+                    "Hilt를 이용한 의존성 주입으로 코드 결합도 감소",
+                    "Clean Architecture 기반의 계층화된 구조 설계",
+                    "Flow를 활용한 반응형 프로그래밍 구현",
+                    "JUnit과 Mockito를 이용한 단위 테스트 작성"
+                ],
+                tech: ["Kotlin", "Clean Architecture", "Hilt", "Retrofit2", "Flow", "JUnit"],
+                github: "https://github.com/yourname/project2",
+                images: ["project2-1.jpg", "project2-2.jpg"]
+            }
+        };
+
+        function openProjectModal(projectId) {
+            const modal = document.getElementById('projectModal');
+            const modalBody = document.getElementById('modalBody');
+            const project = projectData[projectId];
+
+            modalBody.innerHTML = `
+                <h2 class="modal-title">${project.title}</h2>
+                <div class="modal-tags">
+                    ${project.tags.map(tag => `<span class="modal-tag">${tag}</span>`).join('')}
+                </div>
+                <div class="modal-images">
+                    ${project.images.map(img => `
+                        <img src="${img}" alt="${project.title}" class="project-image" onerror="this.src='https://via.placeholder.com/400x300?text=Project+Image'">
+                    `).join('')}
+                </div>
+                <div class="modal-info">
+                    <p><strong>🗓️ 기간:</strong> ${project.period}</p>
+                    <p><strong>👥 팀 구성:</strong> ${project.team}</p>
+                    <p><strong>💼 역할:</strong> ${project.role}</p>
+                </div>
+                <div class="modal-section">
+                    <h3>📋 프로젝트 소개</h3>
+                    <p>${project.description}</p>
+                </div>
+                <div class="modal-section">
+                    <h3>✨ 주요 기능</h3>
+                    <ul class="feature-list">
+                        ${project.features.map(feature => `<li>${feature}</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3>🛠️ 기술 스택</h3>
+                    <div class="tech-stack">
+                        ${project.tech.map(tech => `<span class="tech-badge">${tech}</span>`).join('')}
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <a href="${project.github}" target="_blank" class="btn-github">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        GitHub 보기
+                    </a>
+                </div>
+            `;
+
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('projectModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // 모달 외부 클릭 시 닫기
+        window.onclick = function(event) {
+            const modal = document.getElementById('projectModal');
+            if (event.target == modal) {
+                closeProjectModal();
+            }
+        }
+    </script>
 </body>
 </html>
