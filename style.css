@@ -17,6 +17,7 @@
 
 html {
     scroll-behavior: smooth; /* 클릭 시 부드러운 이동 */
+    scroll-snap-type: y mandatory;
 }
 
 body {
@@ -24,6 +25,8 @@ body {
     background-color: var(--bg-white);
     color: var(--text-main);
     line-height: 1.7;
+    overflow-y: scroll;
+    height: 100vh;
 }
 
 /* --- 상단 네비게이션 (왼쪽 정렬) --- */
@@ -69,12 +72,15 @@ nav a:hover {
 }
 
 section {
-    padding: 50px 0;
+    padding: 100px 0 50px;
     border-bottom: 1px solid var(--line-color);
+    scroll-snap-align: start;
+    min-height: 100vh;
+    scroll-margin-top: 70px;
 }
 
 #about {
-    padding: 50px 0;
+    padding: 100px 0 50px;
 }
 
 /* --- 헤더 (가운데 정렬) --- */
@@ -83,7 +89,10 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 120px 0 120px; /* 상단 네비게이션 공간 확보 */
+    min-height: 100vh; /* 전체 화면 높이 차지 */
+    padding: 0 20px;
+    position: relative;
+    scroll-snap-align: start;
 }
 
 .header-content {
@@ -91,10 +100,10 @@ header {
 }
 
 header h1 {
-    font-size: 2.2rem;       /* 크기를 1.6rem에서 2.2rem으로 확대 */
-    color: #000000;          /* 검은색으로 변경 */
-    font-weight: 700;        /* 조금 더 두껍게 설정 */
-    margin-bottom: 8px;
+    font-size: 2.2rem;       
+    color: #000000;          
+    font-weight: 700;        
+    margin-bottom: 30px;
 }
 
 .highlight {
@@ -107,7 +116,7 @@ header h1 {
     font-size: 4rem;
     font-weight: 900;
     color: var(--android-bold);
-    margin: 20px 0;
+    margin: 40px 0;
     letter-spacing: -2px;
     animation: fadeInUp 0.8s ease-out;
     border: none;
@@ -129,7 +138,7 @@ header h1 {
     font-size: 1.25rem;
     color: var(--text-sub);
     line-height: 1.8;
-    margin: 0 auto;
+    margin: 30px auto 0;
     word-break: keep-all;
 }
 
@@ -869,5 +878,41 @@ footer {
 
     .timeline-content {
         margin-left: 0;
+    }
+}
+
+/* --- 스크롤 다운 버튼 --- */
+.scroll-down {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: var(--android-primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.scroll-down:hover {
+    color: var(--android-bold);
+    transform: translateX(-50%) translateY(-5px);
+}
+
+.scroll-down svg {
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
     }
 }
