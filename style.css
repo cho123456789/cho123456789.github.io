@@ -373,7 +373,7 @@ h2 {
 .timeline::before {
     content: '';
     position: absolute;
-    left: 150px;
+    left: 220px;
     top: 0;
     bottom: 0;
     width: 2px;
@@ -389,7 +389,7 @@ h2 {
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: 144px;
+    left: 214px;
     top: 8px;
     width: 14px;
     height: 14px;
@@ -401,13 +401,14 @@ h2 {
 }
 
 .timeline-date {
-    width: 130px;
+    width: 200px;
     padding-right: 20px;
     text-align: right;
     font-weight: 700;
     color: var(--android-primary);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     flex-shrink: 0;
+    line-height: 1.4;
 }
 
 .timeline-content {
