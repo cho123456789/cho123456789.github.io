@@ -166,7 +166,7 @@ h2 {
     background: #fcfcfc;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid var(--line-color);
+    border: 2px solid var(--line-color);
     text-align: center;
     transition: all 0.3s ease;
     height: 100%;
@@ -207,10 +207,19 @@ h2 {
 }
 
 .profile-role {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: var(--android-primary);
     font-weight: 700;
     margin-bottom: 15px;
+}
+
+.profile-intro {
+    font-size: 0.9rem;
+    color: var(--text-sub);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    word-break: keep-all;
 }
 
 .profile-tags {
