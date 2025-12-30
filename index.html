@@ -15,7 +15,7 @@
             <a href="#about">About</a>
             <a href="#career">Career</a>
             <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            <a href="#certificate">Certificate</a>
         </div>
     </nav>
 
@@ -29,6 +29,14 @@
                     단순한 앱 개발을 넘어 <strong>안드로이드 OS 환경</strong>에 최적화된 설계를 지향합니다.<br>
                     사용자에게 <strong>최고의 모바일 경험</strong>을 선사하는 안드로이드 개발자입니다.
                 </p>
+                <a href="#about" class="scroll-down">
+                    <span>Scroll Down</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </a>
             </div>
         </header>
 
@@ -216,6 +224,27 @@
 
         <section id="projects">
             <h2>Projects</h2>
+
+            <h3 class="project-section-title">💼 Company Projects</h3>
+            <div class="project-grid">
+                <div class="card">
+                    <div class="tags">#Android #Kotlin #Flutter</div>
+                    <h3>드로니캅 (DroneCop)</h3>
+                    <p>어린이 안전 서비스 앱. 지구대 연동 및 실시간 위치 추적 기능을 구현하여 학부모와 경찰이 함께 사용하는 안전 플랫폼을
+                        개발했습니다.</p>
+                    <a href="#" class="more-link"
+                       onclick="openProjectModal('dronecop'); return false;">View Project →</a>
+                </div>
+                <div class="card">
+                    <div class="tags">#Android #Kotlin #Security</div>
+                    <h3>와이콜미 (YCallMe)</h3>
+                    <p>악성앱 검출 서비스 앱. 실시간 악성 앱 탐지 및 차단 기능을 구현하고, 성능 최적화 및 신규 기능을 추가했습니다.</p>
+                    <a href="#" class="more-link"
+                       onclick="openProjectModal('ycallme'); return false;">View Project →</a>
+                </div>
+            </div>
+
+            <h3 class="project-section-title">🚀 Side Projects</h3>
             <div class="project-grid">
                 <div class="card">
                     <div class="tags">#Android #Kotlin #MVVM</div>
@@ -331,6 +360,38 @@
                 tech: ["Kotlin", "Clean Architecture", "Hilt", "Retrofit2", "Flow", "JUnit"],
                 github: "https://github.com/yourname/project2",
                 images: ["project2-1.jpg", "project2-2.jpg"]
+            },
+            dronecop: {
+                title: "드로니캅 (DroneCop)",
+                tags: ["Android", "Kotlin", "Flutter"],
+                period: "2024.11 - Present",
+                team: "4명 (Android 2, Backend 1, Designer 1)",
+                role: "Android Developer",
+                description: "어린이 안전 서비스 앱. 지구대 연동 및 실시간 위치 추적 기능을 구현하여 학부모와 경찰이 함께 사용하는 안전 플랫폼을 개발했습니다.",
+                features: [
+                    "지구대 연동 및 실시간 위치 추적 기능 구현",
+                    "어린이 안전 서비스 플랫폼 개발",
+                    "학부모와 경찰이 함께 사용하는 앱 개발"
+                ],
+                tech: ["Kotlin", "Flutter", "REST API"],
+                github: "https://github.com/yourname/dronecop",
+                images: ["dronecop-1.jpg", "dronecop-2.jpg"]
+            },
+            ycallme: {
+                title: "와이콜미 (YCallMe)",
+                tags: ["Android", "Kotlin", "Security"],
+                period: "2023.02 - 2024.01",
+                team: "3명 (Android 2, Backend 1)",
+                role: "Android Developer",
+                description: "악성앱 검출 서비스 앱. 실시간 악성 앱 탐지 및 차단 기능을 구현하고, 성능 최적화 및 신규 기능을 추가했습니다.",
+                features: [
+                    "실시간 악성 앱 탐지 및 차단 기능 구현",
+                    "성능 최적화 및 신규 기능 추가",
+                    "악성앱 검출 서비스 앱 개발"
+                ],
+                tech: ["Kotlin", "Retrofit2", "REST API"],
+                github: "https://github.com/yourname/ycallme",
+                images: ["ycallme-1.jpg", "ycallme-2.jpg"]
             }
         };
 
