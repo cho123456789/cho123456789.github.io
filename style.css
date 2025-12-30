@@ -774,6 +774,20 @@ a {
     font-weight: 600;
 }
 
+.cert-org {
+    color: var(--text-sub);
+    font-size: 0.85rem;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+.cert-number {
+    color: var(--text-sub);
+    font-size: 0.8rem;
+    margin-top: 5px;
+    font-family: 'Courier New', monospace;
+}
+
 /* --- 푸터 --- */
 footer {
     text-align: center;
