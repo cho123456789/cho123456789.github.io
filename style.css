@@ -75,12 +75,19 @@ section {
     padding: 100px 0 50px;
     border-bottom: 1px solid var(--line-color);
     scroll-snap-align: start;
-    min-height: 100vh;
     scroll-margin-top: 70px;
 }
 
 #about {
     padding: 100px 0 50px;
+}
+
+#projects {
+    padding-bottom: 150px;
+}
+
+#certificate {
+    padding-bottom: 150px;
 }
 
 /* --- 헤더 (가운데 정렬) --- */
