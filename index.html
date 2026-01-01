@@ -260,7 +260,7 @@
                     <p><strong>드론 기반 어린이 등·하교 안전 모니터링 애플리케이션 개발.</strong>
                         <br>
                         <span class="project-detail">실시간 드론 호출, 영상 스트리밍, 위치 추적 기능을 통합하여
-                            <br>학부모와 기동대의 협업 관리 시스템을 구축했습니다.</span>
+                            <br><strong>대덕초</strong> 학부모 및 <strong>대명동 기동순찰대</strong>의 협업 어플리케이션 구축</span>
                     </p>
                     <a href="#" class="more-link"
                        onclick="openProjectModal('dronecop'); return false;">View Project →</a>
@@ -441,11 +441,55 @@
                 period: "2025.09 - 2026.01",
                 team: "4명 (Android 2, Backend 2)",
                 role: "Android Developer",
+                appIcon: "dronecop-icon.png",
+                playStore: "https://play.google.com/store/apps/details?id=kr.co.igis.safehomecomingapp&hl=ko",
                 overview: {
                     summary: "어린이 등·하교 시 드론을 활용한 실시간 모니터링 및 위치 추적 안전 플랫폼",
-                    background: "<div style='margin-bottom: 15px;'><strong>🚨 문제 인식:</strong> 학교 주변 어린이 대상 범죄 및 안전사고가 지속적으로 증가하면서 어린이 보호에 대한 사회적 경각심이 높아지고 있습니다.</div><div style='margin-bottom: 15px;'><strong>⚠️ 기존 한계:</strong> 기존 CCTV와 인력 배치만으로는 넓은 등하교 구간을 실시간으로 감시하기 어렵다는 한계가 있었습니다.</div><div><strong>✅ 해결 방안:</strong> 이에 드론의 기동성과 실시간 영상 전송 기술, 그리고 GPS 기반 위치 추적 시스템을 결합하여, 위급 상황 발생 시 학부모와 경찰이 즉각적으로 현장을 파악하고 신속하게 대응할 수 있는 입체적 안전망 구축이 필수적이었습니다.</div>"
+                    background: "<div style='margin-bottom: 15px;'><strong>🚨 문제 인식:</strong> 학교 주변 어린이 대상 범죄 및 안전사고가 지속적으로 증가하면서 어린이 보호에 대한 사회적 경각심이 높아지고 있습니다.</div><div style='margin-bottom: 15px;'><strong>⚠️ 기존 한계:</strong> 기존 CCTV와 인력 배치만으로는 넓은 등하교 구간을 실시간으로 감시하기 어렵고, 학부모가 개별적으로 자녀의 위치와 안전을 확인하고 관리하기 어렵다는 한계가 있었습니다.</div><div><strong>✅ 해결 방안:</strong> 드론의 기동성과 실시간 영상 전송 기술, 그리고 GPS 기반 위치 추적 시스템을 결합하여, 위급 상황 발생 시 학부모와 경찰이 즉각적으로 현장을 파악하고 신속하게 대응할 수 있는 입체적 안전망을 구축했습니다. 또한 그룹 관리 기능을 통해 학부모가 자녀들의 위치와 안전 상태를 한눈에 모니터링하고 관리할 수 있도록 했습니다.</div>"
                 },
                 description: "어린이 안전 서비스 애플리케이션 개발. 드론 호출 연동 및 실시간 위치 추적 기능을 구현하여 학부모와 기동대가 함께 사용하는 안전 플랫폼을 개발했습니다.",
+                uiScreenshots: [
+                    {
+                        title: "학부모 - 그룹 설정",
+                        description: "자녀 그룹 관리 및 실시간 위치 모니터링",
+                        image: "그룹 설정.jpg"
+                    },
+                    {
+                        title: "학부모 - 등록 메뉴",
+                        description: "원하는 서비스 선택 및 설정",
+                        image: "등록메뉴.jpg"
+                    },
+                    {
+                        title: "학부모 - 위험 요소 등록",
+                        description: "위험 지역 및 요소 등록 및 알림 설정",
+                        image: "위험요소.jpg"
+                    },
+                    {
+                        title: "기동대 - 세이프티존 설정",
+                        description: "안전 구역 설정 및 위험 지역 관리",
+                        image: "세이프티존.jpg"
+                    },
+                    {
+                        title: "학부모 - 이동 경로 추적",
+                        description: "자녀의 등하교 이동 경로 실시간 추적 및 이력 확인",
+                        image: "이동경로표시.jpg"
+                    },
+                    {
+                        title: "기동대 - 드론 순찰",
+                        description: "드론 실시간 순찰 모니터링 및 제어",
+                        image: "드론순찰.png"
+                    },
+                    {
+                        title: "자녀화면 - 메인 화면",
+                        description: "자녀 앱의 실시간 위치 추적 및 알림 확인",
+                        image: "자녀화면.jpg"
+                    },
+                    {
+                        title: "학부모 - 긴급 드론 요청",
+                        description: "위급 상황 시 원터치로 드론 호출 및 실시간 영상 확인",
+                        image: "드론긴급호출.jpg"
+                    }
+                ],
                 features: [
                     "<strong>MethodChannel('drone_control')</strong>로 Flutter → Kotlin 네이티브 함수 호출, 백그라운드 위치 측정을 위해 <strong>NotificationCompat.Builder()</strong>로 Foreground Service 알림 등록 후 <strong>CoroutineScope(Dispatchers.IO).launch</strong>로 비동기 위치 측정 구현",
                     "<strong>FusedLocationProviderClient.requestLocationUpdates()</strong>로 5초 간격 위치 수집 → LocationCallback에서 수신 → <strong>Room DAO insert()</strong>로 로컬 캐싱 후 Retrofit으로 서버 동기화",
@@ -503,6 +547,7 @@
                 period: "2023.02 - 2024.01",
                 team: "3명 (Android 2, Backend 1)",
                 role: "Android Developer",
+                appIcon: "ycallme-icon.png",
                 overview: {
                     summary: "실시간 악성 앱 탐지 및 차단 보안 애플리케이션",
                     background: "스미싱, 보이스피싱 등 악성 앱으로 인한 피해가 증가함에 따라 실시간 감지 및 차단 시스템이 필요했습니다."
@@ -549,10 +594,22 @@
             const project = projectData[projectId];
 
             modalBody.innerHTML = `
+                ${project.appIcon ? `
+                <div class="modal-app-header">
+                    <img src="${project.appIcon}" alt="${project.title} Icon" class="modal-app-icon" onerror="this.src='https://via.placeholder.com/120x120?text=App+Icon'">
+                    <div class="modal-title-section">
+                        <h2 class="modal-title">${project.title}</h2>
+                        <div class="modal-tags">
+                            ${project.tags.map(tag => `<span class="modal-tag">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+                ` : `
                 <h2 class="modal-title">${project.title}</h2>
                 <div class="modal-tags">
                     ${project.tags.map(tag => `<span class="modal-tag">${tag}</span>`).join('')}
                 </div>
+                `}
                 <div class="modal-images">
                     ${project.images.map(img => `
                         <img src="${img}" alt="${project.title}" class="project-image" onerror="this.src='https://via.placeholder.com/400x300?text=Project+Image'">
@@ -575,6 +632,23 @@
                     <p>${project.description}</p>
                 </div>
                 `}
+                ${project.uiScreenshots ? `
+                <div class="modal-section ui-collapsed">
+                    <h3 onclick="toggleUIScreenshots()" style="cursor: pointer; display: flex; align-items: center; justify-content: space-between;">
+                        <span>📱 프로젝트 UI</span>
+                        <span class="toggle-icon" id="uiToggleIcon">보기</span>
+                    </h3>
+                    <div class="modal-ui-screenshots" id="uiScreenshotsContent" style="display: none;">
+                        ${project.uiScreenshots.map(screenshot => `
+                            <div class="screenshot-box">
+                                <h4 class="screenshot-title">${screenshot.title}</h4>
+                                <p class="screenshot-description">${screenshot.description}</p>
+                                <img src="${screenshot.image}" alt="${screenshot.title}" class="screenshot-image" onerror="this.src='https://via.placeholder.com/300x600?text=${encodeURIComponent(screenshot.title)}'">
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                ` : ''}
                 ${project.architecture ? `
                 <div class="modal-section">
                     <h3>🏗️ 아키텍처 & 설계</h3>
@@ -630,13 +704,24 @@
                     </div>
                 </div>
                 <div class="modal-buttons">
+                    ${project.playStore ? `
+                    <a href="${project.playStore}" target="_blank" class="btn-playstore">
+                        <svg width="20" height="20" viewBox="0 0 512 512" fill="currentColor">
+                            <path d="M48,59.49v393a4.33,4.33,0,0,0,7.37,3.07L260,256,55.37,56.42A4.33,4.33,0,0,0,48,59.49Z"/>
+                            <path d="M345.8,174L89.22,32.64l-.16-.09c-4.42-2.4-8.62,3.58-5,7.06L285.19,231.93Z"/>
+                            <path d="M84.08,472.39c-3.64,3.48.56,9.46,5,7.06l.16-.09L345.8,338l-60.61-57.95Z"/>
+                            <path d="M449.38,231l-71.65-39.46L310.36,256l67.37,64.43L449.38,281C468.87,270.23,468.87,241.77,449.38,231Z"/>
+                        </svg>
+                        Play Store
+                    </a>
+                    ` : ''}
                     <a href="${project.github}" target="_blank" class="btn-github">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                        GitHub 보기
-                    </a>
-                </div>
+                    </svg>
+                    GitHub 보기
+                </a>
+            </div>
             `;
 
             modal.style.display = 'block';
@@ -654,6 +739,22 @@
             const modal = document.getElementById('projectModal');
             if (event.target == modal) {
                 closeProjectModal();
+            }
+        }
+
+        function toggleUIScreenshots() {
+            const uiScreenshotsContent = document.getElementById('uiScreenshotsContent');
+            const toggleIcon = document.getElementById('uiToggleIcon');
+            const modalSection = uiScreenshotsContent.closest('.modal-section');
+
+            if (uiScreenshotsContent.style.display === 'none') {
+                uiScreenshotsContent.style.display = 'grid';
+                toggleIcon.innerText = '숨기기';
+                modalSection.classList.remove('ui-collapsed');
+            } else {
+                uiScreenshotsContent.style.display = 'none';
+                toggleIcon.innerText = '보기';
+                modalSection.classList.add('ui-collapsed');
             }
         }
 
