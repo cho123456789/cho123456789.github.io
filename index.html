@@ -133,10 +133,10 @@
         <section id="career">
             <h2>Career</h2>
             <div class="career-filter">
-                <button class="filter-btn" onclick="toggleCareerFilter()">
-                    <span class="filter-text-show">📚 교육 이력도 보기</span>
-                    <span class="filter-text-hide" style="display: none;">📚 교육 이력 숨기기</span>
-                </button>
+                <button class="filter-btn active" onclick="showCareer()">💼 경력 <span
+                        class="filter-count">(총 3년)</span></button>
+                <button class="filter-btn" onclick="showEducation()">📚 교육 이력 <span
+                        class="filter-count">(총 1년)</span></button>
             </div>
             <div class="timeline">
                 <div class="timeline-item">
@@ -658,37 +658,36 @@
         }
 
         // Career 필터 기능
-        function toggleCareerFilter() {
-            const btn = document.querySelector('.filter-btn');
+        function showCareer() {
             const educationItems = document.querySelectorAll('.timeline-item[data-type="education"]');
-            const filterTextShow = document.querySelector('.filter-text-show');
-            const filterTextHide = document.querySelector('.filter-text-hide');
-            
-            if (btn.classList.contains('active')) {
-                // 교육 숨기기 (경력만 보기)
-                educationItems.forEach(item => {
-                    item.style.opacity = '0';
-                    item.style.transform = 'translateX(-20px)';
-                    setTimeout(() => {
-                        item.style.display = 'none';
-                    }, 300);
-                });
-                btn.classList.remove('active');
-                filterTextShow.style.display = 'inline';
-                filterTextHide.style.display = 'none';
-            } else {
-                // 교육 보이기 (전체 보기)
-                educationItems.forEach(item => {
-                    item.style.display = 'flex';
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transform = 'translateX(0)';
-                    }, 10);
-                });
-                btn.classList.add('active');
-                filterTextShow.style.display = 'none';
-                filterTextHide.style.display = 'inline';
-            }
+            const careerItems = document.querySelectorAll('.timeline-item:not([data-type="education"])');
+            const careerBtn = document.querySelector('.filter-btn:first-child');
+            const educationBtn = document.querySelector('.filter-btn:last-child');
+
+            educationItems.forEach(item => {
+                item.style.display = 'none';
+            });
+            careerItems.forEach(item => {
+                item.style.display = 'flex';
+            });
+            careerBtn.classList.add('active');
+            educationBtn.classList.remove('active');
+        }
+
+        function showEducation() {
+            const educationItems = document.querySelectorAll('.timeline-item[data-type="education"]');
+            const careerItems = document.querySelectorAll('.timeline-item:not([data-type="education"])');
+            const careerBtn = document.querySelector('.filter-btn:first-child');
+            const educationBtn = document.querySelector('.filter-btn:last-child');
+
+            educationItems.forEach(item => {
+                item.style.display = 'flex';
+            });
+            careerItems.forEach(item => {
+                item.style.display = 'none';
+            });
+            educationBtn.classList.add('active');
+            careerBtn.classList.remove('active');
         }
 
         // 페이지 로드 시 교육 항목 숨기기

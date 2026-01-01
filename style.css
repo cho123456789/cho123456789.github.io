@@ -490,6 +490,7 @@ h2 {
     justify-content: flex-start;
     margin-bottom: 30px;
     margin-top: 20px;
+    gap: 15px;
 }
 
 .filter-btn {
@@ -538,6 +539,22 @@ h2 {
 
 .filter-btn:not(.active):hover {
     box-shadow: 0 5px 18px rgba(127, 140, 141, 0.35);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, var(--android-primary) 0%, #667eea 100%);
+    box-shadow: 0 3px 12px rgba(74, 144, 226, 0.25);
+}
+
+.filter-btn.active:hover {
+    box-shadow: 0 5px 18px rgba(74, 144, 226, 0.35);
+}
+
+.filter-count {
+    font-size: 0.85rem;
+    font-weight: 600;
+    opacity: 0.85;
+    margin-left: 5px;
 }
 
 .timeline {
