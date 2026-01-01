@@ -18,7 +18,6 @@
 
 html {
     scroll-behavior: smooth; /* 클릭 시 부드러운 이동 */
-    scroll-snap-type: y mandatory;
 }
 
 body {
@@ -73,22 +72,62 @@ nav a:hover {
 }
 
 section {
-    padding: 100px 0 50px;
+    padding: 90px 0 45px;
     border-bottom: 1px solid var(--line-color);
-    scroll-snap-align: start;
-    scroll-margin-top: 70px;
+    scroll-margin-top: 90px;
 }
 
 #about {
-    padding: 100px 0 50px;
+    padding: 110px 0 25px;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+    margin: 0 -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#about h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    border: none;
+    padding: 0;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+#about h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--android-primary);
+    border-radius: 2px;
+}
+
+.about-intro {
+    text-align: center;
+    color: var(--text-sub);
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #projects {
-    padding-bottom: 150px;
+    padding-bottom: 120px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 #certificate {
-    padding-bottom: 150px;
+    padding-bottom: 120px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 /* --- 헤더 (가운데 정렬) --- */
@@ -100,7 +139,6 @@ header {
     min-height: 100vh; /* 전체 화면 높이 차지 */
     padding: 0 20px;
     position: relative;
-    scroll-snap-align: start;
 }
 
 .header-content {
@@ -168,46 +206,56 @@ h2 {
 /* --- About Me 섹션 (통일감 있는 디자인) --- */
 .about-container {
     display: grid;
-    grid-template-columns: 1fr 1.8fr;
-    gap: 40px;
-    margin-top: 20px;
+    grid-template-columns: 380px 1fr;
+    gap: 0;
+    margin: 20px auto 0;
+    max-width: 1000px;
+    background: white;
+    padding: 0;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+    min-height: 600px;
 }
 
 .about-left {
     display: flex;
     flex-direction: column;
     height: 100%;
+    background: linear-gradient(180deg, #2C3E50 0%, #34495e 100%);
+    padding: 40px 20px;
 }
 
 .profile-card {
-    background: #fcfcfc;
-    padding: 30px;
-    border-radius: 15px;
-    border: 2px solid var(--line-color);
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    border: none;
     text-align: center;
     transition: all 0.3s ease;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    box-shadow: none;
 }
 
 .profile-card:hover {
-    border-color: var(--android-primary);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    border-color: transparent;
+    box-shadow: none;
 }
 
 .profile-image {
-    width: 140px;
-    height: 140px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     overflow: hidden;
     background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
-    margin: 0 auto 20px;
+    margin: 0 auto 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 4px solid var(--android-primary);
+    border: 5px solid rgba(255, 255, 255, 0.2);
 }
 
 .profile-image img {
@@ -217,25 +265,33 @@ h2 {
 }
 
 .profile-name {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--android-bold);
-    margin-bottom: 6px;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.profile-birth {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
 }
 
 .profile-role {
-    font-size: 1.2rem;
-    color: var(--android-primary);
+    font-size: 1.3rem;
+    color: #4A90E2;
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 .profile-intro {
-    font-size: 0.9rem;
-    color: var(--text-sub);
-    line-height: 1.6;
-    margin-bottom: 20px;
-    padding: 0 10px;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+    margin-bottom: 30px;
+    padding: 0;
     word-break: keep-all;
 }
 
@@ -244,17 +300,28 @@ h2 {
     gap: 8px;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    max-width: 100%;
 }
 
 .profile-tags span {
-    color: var(--android-primary);
-    font-size: 0.8rem;
+    color: white;
+    font-size: 0.85rem;
     font-weight: 700;
-    padding: 5px 12px;
-    border-radius: 15px;
-    background: rgba(61, 220, 132, 0.1);
-    border: 1px solid rgba(61, 220, 132, 0.3);
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: rgba(74, 144, 226, 0.3);
+    border: 2px solid rgba(74, 144, 226, 0.5);
+    flex: 0 0 calc(50% - 4px);
+    text-align: center;
+}
+
+.profile-social-title {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 .social-links {
@@ -265,57 +332,75 @@ h2 {
 }
 
 .social-icon {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: #f5f5f5;
-    border: 2px solid #e0e0e0;
-    color: #666;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
     transition: all 0.3s ease;
     text-decoration: none;
 }
 
-.social-icon:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-}
-
+/* GitHub (1st icon) */
 .social-icon:nth-child(1) {
-    color: #333;
+    background: rgba(51, 51, 51, 0.2);
+    border-color: rgba(51, 51, 51, 0.3);
 }
 
 .social-icon:nth-child(1):hover {
     background: #333;
     border-color: #333;
-    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* LinkedIn (2nd icon) */
 .social-icon:nth-child(2) {
-    color: #0077b5;
+    background: rgba(0, 119, 181, 0.2);
+    border-color: rgba(0, 119, 181, 0.3);
 }
 
 .social-icon:nth-child(2):hover {
     background: #0077b5;
     border-color: #0077b5;
-    color: white;
+    box-shadow: 0 4px 15px rgba(0, 119, 181, 0.4);
 }
 
+/* Gmail (3rd icon) */
 .social-icon:nth-child(3) {
-    color: #ea4335;
+    background: rgba(234, 67, 53, 0.2);
+    border-color: rgba(234, 67, 53, 0.3);
 }
 
 .social-icon:nth-child(3):hover {
     background: #ea4335;
     border-color: #ea4335;
-    color: white;
+    box-shadow: 0 4px 15px rgba(234, 67, 53, 0.4);
+}
+
+/* Tistory (4th icon) */
+.social-icon:nth-child(4) {
+    background: rgba(255, 85, 68, 0.2);
+    border-color: rgba(255, 85, 68, 0.3);
+}
+
+.social-icon:nth-child(4):hover {
+    background: #FF5544;
+    border-color: #FF5544;
+    box-shadow: 0 4px 15px rgba(255, 85, 68, 0.4);
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.2);
 }
 
 .social-icon svg {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
 }
 
 .profile-description {
@@ -330,65 +415,148 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 40px 25px;
+    background: #fafafa;
 }
 
 .section-subtitle {
-    font-size: 1.6rem;
-    font-weight: 800;
+    font-size: 2rem;
+    font-weight: 900;
     color: var(--android-bold);
-    margin-bottom: 25px;
-    padding-bottom: 15px;
-    border-bottom: 3px solid var(--android-primary);
+    margin-bottom: 40px;
+    padding-bottom: 0;
+    border-bottom: none;
     width: 100%;
+    text-align: left;
+    position: relative;
+}
+
+.section-subtitle::before {
+    content: '💬';
+    margin-right: 12px;
+    font-size: 1.8rem;
 }
 
 .interview-list {
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    max-width: 700px;
+    gap: 30px;
+    max-width: 100%;
     width: 100%;
 }
 
 .interview-item {
-    background: #fcfcfc;
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid var(--line-color);
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    border: 2px solid #e8eaed;
     transition: all 0.3s ease;
-    text-align: center;
+    text-align: left;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
 }
 
 .interview-item:hover {
     border-color: var(--android-primary);
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 .question {
     font-size: 1.15rem;
-    font-weight: 700;
+    font-weight: 800;
     color: var(--android-bold);
-    margin-bottom: 12px;
+    margin-bottom: 15px;
     line-height: 1.6;
 }
 
 .answer {
     font-size: 1rem;
     color: var(--text-main);
-    line-height: 1.8;
+    line-height: 1.9;
     word-break: keep-all;
-    text-align: center;
+    text-align: left;
 }
 
 .answer strong {
     color: var(--android-bold);
-    background: linear-gradient(to top, #3ddc844d 40%, transparent 40%);
+    background: linear-gradient(to top, rgba(74, 144, 226, 0.2) 40%, transparent 40%);
     padding: 0 3px;
     font-weight: 700;
 }
 
 /* --- Career 섹션 (타임라인) --- */
+.career-filter {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+.filter-btn {
+    background: linear-gradient(135deg, var(--android-primary) 0%, #667eea 100%);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 12px rgba(74, 144, 226, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+    transition: left 0.5s ease;
+}
+
+.filter-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 18px rgba(74, 144, 226, 0.35);
+}
+
+.filter-btn:hover::before {
+    left: 100%;
+}
+
+.filter-btn:active {
+    transform: translateY(0);
+}
+
+.filter-btn:not(.active) {
+    background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+    box-shadow: 0 3px 12px rgba(127, 140, 141, 0.25);
+}
+
+.filter-btn:not(.active):hover {
+    box-shadow: 0 5px 18px rgba(127, 140, 141, 0.35);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, var(--android-primary) 0%, #667eea 100%);
+    box-shadow: 0 3px 12px rgba(74, 144, 226, 0.25);
+}
+
+.filter-btn.active:hover {
+    box-shadow: 0 5px 18px rgba(74, 144, 226, 0.35);
+}
+
+.filter-count {
+    font-size: 0.85rem;
+    font-weight: 600;
+    opacity: 0.85;
+    margin-left: 5px;
+}
+
 .timeline {
     position: relative;
     max-width: 900px;
@@ -410,6 +578,7 @@ h2 {
     display: flex;
     margin-bottom: 40px;
     position: relative;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .timeline-item::before {
@@ -440,16 +609,17 @@ h2 {
 .timeline-content {
     flex: 1;
     background: #fcfcfc;
-    padding: 25px 30px;
+    padding: 22px 25px;
     border-radius: 12px;
     border: 1px solid var(--line-color);
     margin-left: 30px;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
 }
 
 .timeline-content:hover {
     border-color: var(--android-primary);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
     transform: translateX(5px);
 }
 
@@ -505,16 +675,17 @@ h2 {
 
 .card {
     background: #fcfcfc;
-    padding: 35px;
+    padding: 25px;
     border-radius: 15px;
     border: 1px solid var(--line-color);
     transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
 }
 
 .card:hover {
     border-color: var(--android-primary);
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
 
 .card h3 {
@@ -574,14 +745,14 @@ h2 {
 .modal-content {
     background-color: #ffffff;
     margin: 5% auto;
-    padding: 40px;
+    padding: 35px;
     border-radius: 15px;
     max-width: 800px;
     width: 90%;
-    position: relative;
-    animation: slideIn 0.3s;
-    max-height: 85vh;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    max-height: 90vh;
     overflow-y: auto;
+    position: relative;
 }
 
 @keyframes slideIn {
@@ -653,7 +824,7 @@ h2 {
 
 .project-image:hover {
     transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .modal-info {
@@ -662,7 +833,7 @@ h2 {
     border-radius: 15px;
     margin-bottom: 35px;
     border-left: 4px solid var(--android-primary);
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
     overflow: hidden;
 }
 
@@ -698,16 +869,16 @@ h2 {
 
 .modal-section {
     margin-bottom: 40px;
-    padding: 35px;
+    padding: 28px;
     background: white;
     border-radius: 18px;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.04);
     transition: all 0.3s ease;
     border: 2px solid transparent;
 }
 
 .modal-section:hover {
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     transform: translateY(-3px);
     border-color: rgba(74, 144, 226, 0.1);
 }
@@ -767,13 +938,13 @@ h2 {
     display: inline-block;
     margin: 5px 0;
     font-weight: 600;
-    box-shadow: 0 2px 6px rgba(74, 144, 226, 0.15);
+    box-shadow: 0 2px 4px rgba(74, 144, 226, 0.08);
     transition: all 0.3s ease;
 }
 
 .modal-section code:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.25);
+    box-shadow: 0 3px 8px rgba(74, 144, 226, 0.15);
     background: linear-gradient(135deg, rgba(74, 144, 226, 0.18) 0%, rgba(118, 75, 162, 0.18) 100%);
 }
 
@@ -790,14 +961,14 @@ h2 {
     border-radius: 25px;
     font-size: 0.95rem;
     font-weight: 600;
-    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+    box-shadow: 0 3px 10px rgba(74, 144, 226, 0.1);
     transition: all 0.3s ease;
     border: 2px solid transparent;
 }
 
 .tech-badge:hover {
     transform: translateY(-4px) scale(1.08);
-    box-shadow: 0 8px 24px rgba(74, 144, 226, 0.45);
+    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.2);
     border-color: rgba(255,255,255,0.3);
 }
 
@@ -809,7 +980,7 @@ h2 {
 }
 
 .feature-list li {
-    padding: 20px 20px 20px 50px;
+    padding: 18px 18px 18px 48px;
     position: relative;
     line-height: 1.9;
     border-bottom: none;
@@ -817,12 +988,14 @@ h2 {
     border-radius: 12px;
     border-left: 3px solid transparent;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
 }
 
 .feature-list li:hover {
     background: linear-gradient(135deg, rgba(74, 144, 226, 0.08) 0%, rgba(118, 75, 162, 0.05) 100%);
     border-left-color: var(--android-primary);
     transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.04);
 }
 
 .feature-list li::before {
@@ -840,7 +1013,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 3px 10px rgba(74, 144, 226, 0.35);
+    box-shadow: 0 2px 8px rgba(74, 144, 226, 0.1);
 }
 
 .challenge-list {
@@ -851,13 +1024,13 @@ h2 {
 }
 
 .challenge-list li {
-    padding: 30px;
+    padding: 25px;
     margin-bottom: 0;
     background: linear-gradient(135deg, rgba(74, 144, 226, 0.04) 0%, rgba(118, 75, 162, 0.04) 100%);
     border-radius: 15px;
     border-left: 5px solid var(--android-primary);
     line-height: 1.9;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.02);
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
@@ -875,7 +1048,7 @@ h2 {
 
 .challenge-list li:hover {
     transform: translateX(8px);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.04);
     background: linear-gradient(135deg, rgba(74, 144, 226, 0.08) 0%, rgba(118, 75, 162, 0.06) 100%);
 }
 
@@ -887,7 +1060,7 @@ h2 {
     padding: 8px 14px;
     border-radius: 8px;
     background: white;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
 }
 
 .challenge-list li strong:first-child {
@@ -911,7 +1084,7 @@ h2 {
 }
 
 .achievement-list li {
-    padding: 20px 20px 20px 55px;
+    padding: 18px 18px 18px 50px;
     position: relative;
     line-height: 1.9;
     font-size: 1.05rem;
@@ -925,7 +1098,7 @@ h2 {
     background: linear-gradient(135deg, rgba(74, 144, 226, 0.12) 0%, rgba(118, 75, 162, 0.08) 100%);
     transform: translateY(-3px) scale(1.02);
     border-color: rgba(74, 144, 226, 0.3);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.04);
 }
 
 .achievement-list li::before {
@@ -970,6 +1143,11 @@ a {
     border-left: 4px solid var(--android-primary);
 }
 
+#career {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
 .certificate-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -981,17 +1159,18 @@ a {
 
 .cert-card {
     background: #fcfcfc;
-    padding: 30px;
+    padding: 25px;
     border-radius: 12px;
     border: 1px solid var(--line-color);
     text-align: center;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
 }
 
 .cert-card:hover {
     border-color: var(--android-primary);
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.05);
 }
 
 .cert-icon {
@@ -1038,40 +1217,69 @@ footer {
 /* 모바일 대응 */
 @media (max-width: 768px) {
     header {
-        padding: 90px 0 50px;
+        padding: 80px 0 45px;
     }
     section {
-        padding: 35px 0;
+        padding: 30px 0;
+    }
+    
+    #about {
+        padding: 70px 0 25px;
+        margin: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    #about h2 {
+        font-size: 2.2rem;
+    }
+    
+    .about-intro {
+        font-size: 1rem;
+        margin-bottom: 30px;
     }
     
     .about-container {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 0;
+        padding: 0;
     }
-    
-    .profile-card {
-        padding: 30px;
+
+    .about-left {
+        padding: 35px 20px;
     }
-    
+
+    .about-right {
+        padding: 35px 20px;
+    }
+
     .profile-image {
         width: 150px;
         height: 150px;
     }
-    
+
     .profile-name {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
+    }
+
+    .profile-birth {
+        font-size: 0.9rem;
     }
     
+    .profile-social-title {
+        font-size: 0.8rem;
+    }
+
     .profile-role {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
-    
+
     .section-subtitle {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
     }
     
     .interview-item {
-        padding: 25px;
+        padding: 20px;
     }
     
     .question {
@@ -1099,6 +1307,14 @@ footer {
         left: 14px;
     }
 
+    .timeline-item[data-type="education"] {
+        display: flex;
+    }
+    
+    .timeline-item[data-type="education"][style*="display: none"] {
+        display: none !important;
+    }
+
     .timeline-date {
         width: 100%;
         text-align: left;
@@ -1108,6 +1324,22 @@ footer {
 
     .timeline-content {
         margin-left: 0;
+    }
+    
+    .modal-app-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .modal-app-icon {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .modal-title-section {
+        align-items: center;
     }
 }
 
@@ -1149,19 +1381,85 @@ footer {
 
 .pattern-box {
     margin-bottom: 30px;
-    padding: 25px;
+    padding: 22px;
     background: linear-gradient(135deg, rgba(74, 144, 226, 0.03) 0%, rgba(118, 75, 162, 0.03) 100%);
     border: 2px solid rgba(74, 144, 226, 0.2);
     border-radius: 15px;
-    box-shadow: 0 3px 10px rgba(74, 144, 226, 0.1);
+    box-shadow: 0 2px 8px rgba(74, 144, 226, 0.05);
     transition: all 0.3s ease;
 }
 
 .pattern-box:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(74, 144, 226, 0.2);
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.1);
     border-color: var(--android-primary);
     background: linear-gradient(135deg, rgba(74, 144, 226, 0.06) 0%, rgba(118, 75, 162, 0.06) 100%);
+}
+
+/* 프로젝트 UI 스크린샷 */
+.modal-ui-screenshots {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.03) 0%, rgba(118, 75, 162, 0.03) 100%);
+    border-radius: 15px;
+    border: 2px solid rgba(74, 144, 226, 0.1);
+}
+
+.screenshot-box {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #e8eaed;
+    text-align: center;
+}
+
+.screenshot-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border-color: var(--android-primary);
+}
+
+.screenshot-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--android-bold);
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.screenshot-description {
+    font-size: 0.9rem;
+    color: var(--text-sub);
+    margin-bottom: 15px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.screenshot-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #e8eaed;
+    transition: all 0.3s ease;
+}
+
+.screenshot-image:hover {
+    transform: scale(1.02);
+    border-color: var(--android-primary);
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.2);
+}
+
+@media (max-width: 768px) {
+    .modal-ui-screenshots {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
 }
 
 .pattern-box:last-child {
@@ -1177,5 +1475,120 @@ footer {
 }
 
 .pattern-box p:last-child {
+    margin-bottom: 0;
+}
+
+.modal-app-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid #e8eaed;
+}
+
+.modal-app-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 24px;
+    object-fit: cover;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    border: 3px solid #e8eaed;
+    transition: all 0.3s ease;
+}
+
+.modal-app-icon:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(74, 144, 226, 0.3);
+    border-color: var(--android-primary);
+}
+
+.modal-title-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-title-section .modal-title {
+    margin-bottom: 0;
+}
+
+.modal-title-section .modal-tags {
+    margin-bottom: 0;
+}
+
+/* 모달 버튼 스타일 */
+.modal-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.btn-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #24292e 0%, #1a1e22 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn-github:hover {
+    background: linear-gradient(135deg, #2d333b 0%, #24292e 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(36, 41, 46, 0.4);
+    border-color: #58a6ff;
+}
+
+.btn-playstore {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #01875f 0%, #019267 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn-playstore:hover {
+    background: linear-gradient(135deg, #019267 0%, #01a572 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(1, 135, 95, 0.4);
+    border-color: #00c896;
+}
+
+.toggle-icon {
+    font-size: 0.85rem;
+    color: var(--android-primary);
+    transition: all 0.3s ease;
+    user-select: none;
+    padding: 4px 12px;
+    background: rgba(74, 144, 226, 0.1);
+    border-radius: 15px;
+    font-weight: 600;
+}
+
+.toggle-icon:hover {
+    background: rgba(74, 144, 226, 0.2);
+    transform: scale(1.05);
+}
+
+.modal-section.ui-collapsed {
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.modal-section.ui-collapsed h3 {
     margin-bottom: 0;
 }
