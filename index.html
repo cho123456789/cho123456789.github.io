@@ -262,8 +262,22 @@
                         <span class="project-detail">실시간 드론 호출, 영상 스트리밍, 위치 추적 기능을 통합하여
                             <br><strong>대덕초</strong> 학부모 및 <strong>대명동 기동순찰대</strong>의 협업 어플리케이션 구축</span>
                     </p>
-                    <a href="#" class="more-link"
-                       onclick="openProjectModal('dronecop'); return false;">View Project →</a>
+                    <div style="display: flex; gap: 15px; align-items: center; margin-top: 18px;">
+                        <a href="#" class="more-link" style="margin-top: 0;"
+                           onclick="openProjectModal('dronecop'); return false;">View Project →</a>
+                        <a href="https://play.google.com/store/apps/details?id=kr.co.igis.safehomecomingapp&hl=ko"
+                           target="_blank"
+                           class="btn-playstore"
+                           style="padding: 8px 16px; font-size: 0.85rem;">
+                            <svg width="16" height="16" viewBox="0 0 512 512" fill="currentColor">
+                                <path d="M48,59.49v393a4.33,4.33,0,0,0,7.37,3.07L260,256,55.37,56.42A4.33,4.33,0,0,0,48,59.49Z"/>
+                                <path d="M345.8,174L89.22,32.64l-.16-.09c-4.42-2.4-8.62,3.58-5,7.06L285.19,231.93Z"/>
+                                <path d="M84.08,472.39c-3.64,3.48.56,9.46,5,7.06l.16-.09L345.8,338l-60.61-57.95Z"/>
+                                <path d="M449.38,231l-71.65-39.46L310.36,256l67.37,64.43L449.38,281C468.87,270.23,468.87,241.77,449.38,231Z"/>
+                            </svg>
+                            Play Store
+                        </a>
+                    </div>
                 </div>
                 <div class="card">
                     <div class="tags">#Android #Kotlin #Security</div>
@@ -271,8 +285,22 @@
                     <p><strong>악성앱 검출 보안 애플리케이션 개발.</strong><br>
                         <span class="project-detail">실시간 악성 앱 탐지 및 차단 기능 구현, 성능 최적화 및 신규 기능을 추가했습니다.</span>
                     </p>
-                    <a href="#" class="more-link"
-                       onclick="openProjectModal('ycallme'); return false;">View Project →</a>
+                    <div style="display: flex; gap: 15px; align-items: center; margin-top: 18px;">
+                        <a href="#" class="more-link" style="margin-top: 0;"
+                           onclick="openProjectModal('ycallme'); return false;">View Project →</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.yhdb.ycallme"
+                           target="_blank"
+                           class="btn-playstore"
+                           style="padding: 8px 16px; font-size: 0.85rem;">
+                            <svg width="16" height="16" viewBox="0 0 512 512" fill="currentColor">
+                                <path d="M48,59.49v393a4.33,4.33,0,0,0,7.37,3.07L260,256,55.37,56.42A4.33,4.33,0,0,0,48,59.49Z"/>
+                                <path d="M345.8,174L89.22,32.64l-.16-.09c-4.42-2.4-8.62,3.58-5,7.06L285.19,231.93Z"/>
+                                <path d="M84.08,472.39c-3.64,3.48.56,9.46,5,7.06l.16-.09L345.8,338l-60.61-57.95Z"/>
+                                <path d="M449.38,231l-71.65-39.46L310.36,256l67.37,64.43L449.38,281C468.87,270.23,468.87,241.77,449.38,231Z"/>
+                            </svg>
+                            Play Store
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -491,15 +519,37 @@
                     }
                 ],
                 features: [
-                    "<strong>MethodChannel('drone_control')</strong>로 Flutter → Kotlin 네이티브 함수 호출, 백그라운드 위치 측정을 위해 <strong>NotificationCompat.Builder()</strong>로 Foreground Service 알림 등록 후 <strong>CoroutineScope(Dispatchers.IO).launch</strong>로 비동기 위치 측정 구현",
-                    "<strong>FusedLocationProviderClient.requestLocationUpdates()</strong>로 5초 간격 위치 수집 → LocationCallback에서 수신 → <strong>Room DAO insert()</strong>로 로컬 캐싱 후 Retrofit으로 서버 동기화",
-                    "<strong>viewModelScope.launch</strong>로 백그라운드에서 Retrofit 호출 → <strong>StateFlow.emit()</strong>으로 드론 상태 정보 발행 → UI에서 <strong>collectAsState()</strong>로 자동 리렌더링",
-                    "<strong>ExoPlayer.Builder().build()</strong>로 플레이어 초기화 → <strong>MediaItem.fromUri(rtmpUrl)</strong>로 RTMP 스트림 연결 → <strong>PlayerView</strong>에 바인딩하여 실시간 재생",
-                    "<strong>WorkManager.enqueuePeriodicWork()</strong>로 15분 주기 <strong>PeriodicWorkRequest</strong> 등록 → <strong>doWork()</strong> 내에서 위치 업로드 API 호출",
-                    "<strong>ChangeNotifier</strong> 상속 클래스에서 <strong>notifyListeners()</strong> 호출 → <strong>Provider.of<T>(context)</strong>로 Consumer 위젯 자동 업데이트",
-                    "<strong>FirebaseMessaging.onMessage</strong> 리스너 등록 → Data Payload 파싱 후 <strong>NotificationManager.notify()</strong>로 Notification 표시",
-                    "<strong>GoogleMap(markers: _markers)</strong>로 지도 표시 → <strong>Marker(position: LatLng)</strong>로 위치 마킹 → <strong>Polyline(points: _routePoints)</strong>로 이동 경로 시각화",
-                    "<strong>PermissionHandler.request()</strong>로 위치/카메라 권한 요청 → <strong>PermissionStatus.granted</strong> 확인 후 기능 활성화"
+                    "<strong>🔧 Flutter 백그라운드 서비스 제한 해결</strong><br>" +
+                    "• <strong>문제:</strong> Flutter만으로는 Android 백그라운드 서비스 제한으로 지속적인 위치 추적 불가<br>" +
+                    "• <strong>해결:</strong> Native Android를 활용한 <strong>Hybrid 구조</strong> 채택<br>" +
+                    "• <strong>구현:</strong> <strong>Platform Channel(MethodChannel)</strong>로 Flutter-Kotlin 네이티브 통신 구축<br>" +
+                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ <strong>NotificationCompat.Builder()</strong>로 Foreground Service 알림 등록<br>" +
+                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ <strong>CoroutineScope(Dispatchers.IO).launch</strong>로 백그라운드 비동기 위치 측정",
+                    "<strong>📡 REST API 통신 구현</strong><br>" +
+                    "• <strong>문제:</strong> Flutter에서 Backend 서버와 효율적인 REST API 통신 및 JSON 데이터 처리 필요<br>" +
+                    "• <strong>해결:</strong> <strong>Freezed</strong> + <strong>Dio</strong> 조합으로 타입 안전한 데이터 통신 구현<br>" +
+                    "• <strong>구현:</strong> <strong>@freezed</strong> 어노테이션으로 모델 클래스 정의 → <strong>build_runner</strong>로 <strong>*.g.dart</strong>, <strong>*.freezed.dart</strong> 자동 생성<br>" +
+                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ <strong>Dio(BaseOptions())</strong>로 HTTP 클라이언트 설정<br>" +
+                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ <strong>dio.post()</strong>, <strong>dio.get()</strong>으로 서버 통신 후 Response를 Freezed 모델로 자동 변환",
+                    "<strong>🔔 FCM을 통한 백그라운드 데이터 갱신</strong><br>" +
+                    "• <strong>문제:</strong> 서버 이벤트(시간대 변경, 드론 요청, 세이프티존 이탈)의 실시간 앱 전달 필요<br>" +
+                    "• <strong>해결:</strong> <strong>FCM</strong>으로 백그라운드에서도 Push 알림 및 데이터 갱신 구현<br>" +
+                    "• <strong>구현:</strong> <strong>FirebaseMessaging.onMessage</strong>로 Foreground 메시지 수신<br>" +
+                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ <strong>onBackgroundMessage</strong>로 백그라운드 메시지 처리<br>" +
+                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ Data Payload 파싱 후 <strong>Riverpod</strong>로 상태 업데이트<br>" +
+                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ <strong>notifications</strong>로 알림 표시",
+                    "<strong>🎨 디자인팀과 피그마 협업을 통한 UI/UX 구성</strong><br>" +
+                    "• <strong>문제:</strong> 학부모와 기동대의 서로 다른 사용 시나리오에 맞는 직관적인 UI 설계 필요<br>" +
+                    "• <strong>해결:</strong> 디자인팀과 <strong>Figma</strong> 협업으로 사용자 중심 UI/UX 설계<br>" +
+                    "• <strong>구현:</strong> Figma 디자인 시스템 기반 컴포넌트 구현 → Flutter Widget으로 변환<br>" +
+                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ 디자인팀 피드백 반영하여 <strong>반응형 레이아웃</strong> 및 <strong>접근성</strong> 개선<br>" +
+                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ Material Design 가이드라인 준수로 일관된 사용자 경험 제공",
+                    "<strong>🔄 Riverpod를 활용한 체계적 상태 관리</strong><br>" +
+                    "• <strong>문제:</strong> 복잡한 앱 상태(드론 정보, 위치 데이터, 알림 등) 효율적 관리 필요<br>" +
+                    "• <strong>해결:</strong> <strong>Riverpod</strong> Provider 패턴으로 전역 상태 관리 및 의존성 주입 구현<br>" +
+                    "• <strong>구현:</strong> <strong>StateNotifierProvider</strong>로 드론 상태 및 위치 추적 데이터 관리<br>" +
+                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ <strong>FutureProvider</strong>로 API 호출 및 비동기 데이터 로딩<br>" +
+                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ <strong>Family Modifier</strong>로 ID별 개별 상태 관리 구현",
                 ],
                 architecture: {
                     patterns: [
@@ -519,26 +569,11 @@
                         }
                     ]
                 },
-                challenges: [
-                    {
-                        problem: "백그라운드에서 지속적인 위치 추적 시 배터리 소모 문제",
-                        solution: "WorkManager와 배치 업로드 방식으로 변경, 위치 수집은 로컬 DB에 저장 후 15분마다 일괄 전송",
-                        reason: "실시간성을 유지하면서도 네트워크 요청 횟수를 줄여 배터리 소모 약 40% 감소"
-                    },
-                    {
-                        problem: "Flutter에서 Android Foreground Service 제어의 어려움",
-                        solution: "Platform Channel을 구현하여 Kotlin 네이티브 모듈로 Service 생명주기 직접 제어",
-                        reason: "Flutter의 제한된 네이티브 기능 접근을 극복하고, Android 정책 준수 (백그라운드 위치 수집 시 알림 필수)"
-                    }
-                ],
                 achievements: [
-                    "✅ Google Play 스토어 출시 및 3개 지역 시범 운영",
-                    "✅ 백그라운드 위치 추적 배터리 최적화로 40% 소모 감소",
-                    "✅ RTMP 스트리밍 지연시간 1초 이내 달성",
-                    "✅ 학부모 및 경찰 기동대 실사용 피드백 기반 UX 개선"
+                    "✅ Google Play / App Store 출시",
+                    "✅ 대덕초 학부모 / 대명동 기동대 실사용 피드백 기반 UX 개선"
                 ],
-                tech: ["Kotlin", "Flutter", "Provider", "Riverpod", "MethodChannel", "Coroutine", "StateFlow", "FCM", "Google Maps", "WorkManager", "Retrofit2", "Room DB", "ExoPlayer", "Freezed", "build_runner"],
-                github: "https://github.com/yourname/dronecop",
+                tech: ["Kotlin", "Flutter", "Provider", "Riverpod", "MethodChannel", "Coroutine", "FCM", "Retrofit2", "Freezed"],
                 images: ["dronecop-1.jpg", "dronecop-2.jpg"]
             },
             ycallme: {
@@ -548,6 +583,7 @@
                 team: "3명 (Android 2, Backend 1)",
                 role: "Android Developer",
                 appIcon: "ycallme-icon.png",
+                playStore: "https://play.google.com/store/apps/details?id=com.yhdb.ycallme",
                 overview: {
                     summary: "실시간 악성 앱 탐지 및 차단 보안 애플리케이션",
                     background: "스미싱, 보이스피싱 등 악성 앱으로 인한 피해가 증가함에 따라 실시간 감지 및 차단 시스템이 필요했습니다."
@@ -555,7 +591,7 @@
                 description: "악성앱 검출 보안 애플리케이션 개발. 실시간 악성 앱 탐지 및 차단 기능 구현, 성능 최적화 및 신규 기능을 추가했습니다.",
                 features: [
                     "<strong>PackageManager.getInstalledApplications()</strong>로 설치된 앱 목록 수집 → 앱 해시값 생성 후 Retrofit으로 서버에 전송하여 악성 앱 여부 확인",
-                    "<strong>BroadcastReceiver</strong>로 <strong>ACTION_PACKAGE_ADDED</strong> 리스닝하여 신규 앱 설치 즉��� 감지 및 검증",
+                    "<strong>BroadcastReceiver</strong>로 <strong>ACTION_PACKAGE_ADDED</strong> 리스닝하여 신규 앱 설치 즉시 감지 및 검증",
                     "<strong>Jetpack Compose</strong>로 UI 구현, <strong>LazyColumn</strong>으로 대량 앱 리스트 성능 최적화",
                     "<strong>Coroutine + Flow</strong>로 비동기 네트워크 통신 및 실시간 UI 업데이트"
                 ],
@@ -675,20 +711,6 @@
                         ${project.features.map(feature => `<li>${feature}</li>`).join('')}
                     </ul>
                 </div>
-                ${project.challenges ? `
-                <div class="modal-section">
-                    <h3>💡 기술적 도전과 해결</h3>
-                    <ul class="challenge-list">
-                        ${project.challenges.map(challenge => `
-                            <li>
-                                <strong>🔴 도전:</strong> ${challenge.problem}<br>
-                                <strong>🟢 해결:</strong> ${challenge.solution}<br>
-                                <strong>💡 결과:</strong> ${challenge.reason}
-                            </li>
-                        `).join('')}
-                    </ul>
-                </div>
-                ` : ''}
                 ${project.achievements ? `
                 <div class="modal-section">
                     <h3>📊 성과 & 결과</h3>
@@ -715,13 +737,8 @@
                         Play Store
                     </a>
                     ` : ''}
-                    <a href="${project.github}" target="_blank" class="btn-github">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                    GitHub 보기
-                </a>
-            </div>
+                </div>
+
             `;
 
             modal.style.display = 'block';
