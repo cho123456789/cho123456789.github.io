@@ -307,11 +307,13 @@
             <h3 class="project-section-title">🚀 Side Projects</h3>
             <div class="project-grid">
                 <div class="card">
-                    <div class="tags">#Android #Kotlin #MVVM</div>
-                    <h3>Project Name 01</h3>
-                    <p>사용자 친화적인 모바일 쇼핑 앱을 개발했습니다. MVVM 아키텍처 패턴을 적용하여 유지보수성과 확장성을 높였습니다.</p>
+                    <div class="tags">#Android #Kotlin #Compose #Glance</div>
+                    <h3>📸 QWER Photo Widget</h3>
+                    <p><strong>걸그룹 밴드 QWER의 홈 화면 위젯 애플리케이션 개발.</strong><br>
+                        <span class="project-detail">Jetpack Glance와 Coil을 활용한 커스텀 위젯 서비스. 팬과 아티스트를 잇는 가장 가까운 연결고리를 홈 화면에 제공합니다.</span>
+                    </p>
                     <a href="#" class="more-link"
-                       onclick="openProjectModal('project1'); return false;">View Project →</a>
+                       onclick="openProjectModal('qwer'); return false;">View Project →</a>
                 </div>
                 <div class="card">
                     <div class="tags">#Android #Retrofit2 #Hilt</div>
@@ -667,18 +669,6 @@
                         }
                     ]
                 },
-                challenges: [
-                    {
-                        problem: "대량의 앱 목록 스캔 시 UI 프리징 발생",
-                        solution: "Coroutine의 Dispatchers.IO로 백그라운드 처리 후 StateFlow로 UI 업데이트",
-                        reason: "메인 스레드 블로킹 방지 및 사용자 경험 개선"
-                    },
-                    {
-                        problem: "기존 XML 기반 UI의 복잡도 증가",
-                        solution: "선언형 코드인 Compose 활용",
-                        reason: "코드 가독성 향상 및 유지보수성 50% 개선"
-                    }
-                ],
                 achievements: [
                     "✅ 악성앱 판별 솔루션 KISA 협력과제 1등 수상 (2024)",
                     "✅ Google Play 스토어 앱 출시 및 운영 (2023~)",
@@ -686,6 +676,117 @@
                 tech: ["Kotlin", "Jetpack Compose", "Coroutine", "Retrofit2", "Clean Architecture"],
                 github: "https://github.com/yourname/ycallme",
                 images: ["ycallme-1.jpg", "ycallme-2.jpg"]
+            },
+            qwer: {
+                title: "📸 QWER Photo Widget",
+                tags: ["Android", "Kotlin", "Jetpack Compose", "Glance"],
+                period: "2025.07 - 2025.12 (약 22주)",
+                team: "1명 (Solo Project)",
+                role: "Android Developer",
+                mainImage: "QWER메인.jpg",
+                overview: {
+                    summary: "걸그룹 밴드 QWER의 홈 화면 위젯 애플리케이션",
+                    background: "<div style='margin-bottom: 20px;'><strong>💌 프로젝트 동기: From Fan's Heart</strong><br>'갤러리를 넘어 당신의 바탕화면으로, QWER과 함께하는 일상'<br><br>좋아하는 아티스트의 사진을 찾아보고 저장하는 즐거움은 팬이라면 누구나 공감할 것입니다. 저는 여기서 한 걸음 더 나아가고자 했습니다.<br><br>번거롭게 앱을 켜지 않아도, 스마트폰을 켜는 그 짧은 찰나에 QWER의 에너지를 마주할 수 있다면 어떨까요? 최애의 모습을 단지 데이터로 저장하는 것이 아니라, Android 홈 화면이라는 가장 가까운 공간에 생동감 있게 배치하고자 하는 진심에서 이 프로젝트를 시작하였습니다!</div><div style='margin-bottom: 20px;'><strong>🔍 Market Analysis & Benchmarking</strong><br>'최고의 무대를 위해 다른 아티스트의 공연을 분석하는 아티스트처럼'<br><br>더 완성도 높은 조화로운 합을 구현하기 위해 시중에 출시된 다양한 K-POP 및 위젯 앱들을 연구했습니다.<br><br><strong>📱 Case 1: [QWER 포토위젯] iOS 앱 분석</strong><br>• 위젯 설정 인터페이스 및 기능 UX 프로세스 집중 분석<br>• QWER 멤버별 상징색이 돋보이는 시각적 표현 기법 연구<br>• 디데이, 한마디 등 정보가 조화롭게 배치되는 레이아웃 구현 방식 학습<br><br><strong>✨ 차별화 포인트:</strong><br>• <strong>Freestyle Positioning:</strong> 사용자가 직접 글자 위치를 자유롭게 배치<br>• <strong>Album Concept Random Pick:</strong> 앨범 컨셉에 맞춘 랜덤 추출 방식 도입<br><br><strong>📱 Case 2: [QWER 배경화면] Android 앱 분석</strong><br>• 아티스트 사진 탐색부터 디바이스 적용까지의 UX 프로세스 분석<br>• 직관적인 설정 방식에서 핵심 아이디어 획득<br><br><strong>✨ 차별화 포인트:</strong><br>• <strong>Dual-Registration:</strong> 홈/잠금 화면 동시 등록 편의성 제공<br>• <strong>Personalized Custom:</strong> 배경화면 직접 편집 가능한 고도화된 커스텀 기능</div><div><strong>⏳ 개발 과정</strong><br>'하나의 곡을 완성하듯, 기술과 감성의 조화로운 합(Harmony)을 찾아서'<br><br>밴드 QWER이 완벽한 한 곡을 위해 수천 번의 합주를 반복하듯, 저 또한 위젯과 앱 사이의 조화로운 합을 찾기 위해 집요하게 몰입했습니다.<br><br><strong>시행착오의 기록:</strong><br>• Architecture Re-design: MVVM → Jetpack Compose + Clean Architecture로 전환<br>• UI/UX Refinement: QWER 컨셉과 Photo Widget 기능의 최적 조화를 위한 수십 번의 레이아웃 갈아엎기<br>• Performance Tuning: Coil을 활용한 bitmap 변환 및 Glance DataStore 데이터 전달 방식 구현</div>"
+                },
+                description: "QWER을 향한 팬심을 안드로이드의 최신 기술로 구현한 커스텀 위젯 서비스입니다. 단순히 사진을 보여주는 것을 넘어, 팬과 아티스트를 잇는 가장 가까운 연결고리를 홈 화면에 제공합니다.",
+                uiScreenshots: [
+                    {
+                        title: "📸 위젯 홈 화면 (Photo Management)",
+                        description: "QWER 멤버 소개와 앨범 컨셉 버튼 제공. Coil 라이브러리로 메모리 최적화 및 BitMap 데이터 직접 변환",
+                        image: "qwer-home.jpg"
+                    },
+                    {
+                        title: "🖼️ 이미지 배경화면 등록 (Live Image & Custom)",
+                        description: "사용자 정의 배경화면 커스텀. 홈/잠금 화면 동시 등록 One-Stop 시스템",
+                        image: "qwer-wallpaper.jpg"
+                    },
+                    {
+                        title: "📅 맞춤형 위젯 커스텀 (Fandom D-Day & Edit)",
+                        description: "글자 크기, 색상, 위치 직접 지정. 배경 톤에 맞춘 텍스트 가독성 확보",
+                        image: "qwer-custom.jpg"
+                    },
+                    {
+                        title: "📅 다채로운 위젯 라인업 (Multi-Widget System)",
+                        description: "포토/디데이/시계 위젯 지원. 실시간 동기화 인터렉션 구현",
+                        image: "qwer-widgets.jpg"
+                    }
+                ],
+                features: [
+                    "<strong>📸 위젯 홈 화면 (Photo Management)</strong><br>" +
+                    "• <strong>문제:</strong> 아티스트 사진을 자주 보고 싶지만 매번 갤러리 앱을 열어야 하는 번거로움<br>" +
+                    "• <strong>해결:</strong> 홈 화면 위젯으로 최애 사진을 항상 접근 가능하게 배치<br>" +
+                    "• <strong>구현:</strong> QWER 멤버별 앨범 컨셉 버튼 제공 → 랜덤 이미지 추출로 재미 요소 극대화<br>" +
+                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ <strong>Coil</strong> 라이브러리 자동 캐싱으로 메모리 최적화<br>" +
+                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ BitMap 데이터로 직접 변환하여 위젯 성능 향상",
+                    "<strong>🖼️ 이미지 배경화면 등록 (Live Image & Custom)</strong><br>" +
+                    "• <strong>문제:</strong> 홈/잠금 화면을 개별 설정해야 하는 번거로움 및 이미지 구도 최적화 어려움<br>" +
+                    "• <strong>해결:</strong> One-Stop 동시 등록 시스템 + 사용자 정의 배경화면 커스텀<br>" +
+                    "• <strong>구현:</strong> 단 한 번의 설정으로 홈/잠금 화면 동시 등록<br>" +
+                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ 디바이스 해상도에 맞춰 이미지 자연스럽게 배치<br>" +
+                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ 사용자 원하는 구도와 위치로 배경화면 최적화",
+                    "<strong>📅 맞춤형 위젯 커스텀 (Fandom D-Day & Edit)</strong><br>" +
+                    "• <strong>문제:</strong> 정형화된 위젯 디자인으로 사진과 글자가 어울리지 않는 경우 발생<br>" +
+                    "• <strong>해결:</strong> 글자 크기, 색상, 위치를 직접 지정할 수 있는 자유로운 커스텀<br>" +
+                    "• <strong>구현:</strong> <strong>Jetpack Glance</strong>로 선언형 UI 스타일 위젯 구현<br>" +
+                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ 배경 이미지 톤에 맞춘 텍스트 가독성 확보<br>" +
+                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ 팬들이 자신만의 감성으로 '조화로운' 위젯 완성",
+                    "<strong>📅 다채로운 위젯 라인업 (Multi-Widget System)</strong><br>" +
+                    "• <strong>문제:</strong> 단일 위젯 모드로는 팬덤의 다양한 니즈를 충족하기 어려움<br>" +
+                    "• <strong>해결:</strong> 포토/디데이/시계 위젯 등 다양한 옵션 제공<br>" +
+                    "• <strong>구현:</strong> <strong>GlanceAppWidget</strong>으로 다양한 위젯 모드 지원<br>" +
+                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ 시계 위젯 클릭 시 <strong>실시간 동기화</strong> 인터렉션<br>" +
+                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ <strong>DataStore</strong>로 위젯 상태 영속적 저장"
+                ],
+                architecture: {
+                    patterns: [
+                        {
+                            name: "Jetpack Compose + Clean Architecture",
+                            description: "<strong>UI Layer:</strong> Jetpack Compose 기반 선언형 UI <br> <strong>Domain/Data Layer:</strong> Clean Architecture로 비즈니스 로직과 UI 분리 <br> <strong>Widget Engine:</strong> GlanceAppWidget & GlanceAppWidgetReceiver를 통한 위젯 데이터 연동 및 UI 표시",
+                            dataFlow: "UI (Compose) → ViewModel → UseCase → Repository → DataStore/Supabase → 결과 반환 → Widget 업데이트"
+                        },
+                        {
+                            name: "Jetpack Glance 위젯 구현",
+                            description: "<strong>GlanceAppWidget:</strong> 선언형 UI 스타일로 위젯 레이아웃 구성 <br> <strong>GlanceAppWidgetReceiver:</strong> 위젯 업데이트 이벤트 수신 <br> <strong>DataStore:</strong> 위젯과 앱 간 데이터 공유를 위한 경량 저장소",
+                            dataFlow: "Widget Click → GlanceAppWidgetReceiver → DataStore 업데이트 → GlanceAppWidget 리렌더링"
+                        },
+                        {
+                            name: "Coil + Bitmap 이미지 처리",
+                            description: "<strong>Coil 최적화:</strong> 리사이징 및 Downsampling으로 위젯 크기에 맞는 비트맵 생성 <br> <strong>메모리 가드:</strong> 비트맵 크기 체크 후 최적화하여 안정적 렌더링 <br> <strong>캐싱 전략:</strong> Coil 자동 캐싱으로 메모리 효율 극대화",
+                            dataFlow: "이미지 URL → Coil 로딩 → Bitmap 변환 → 크기 최적화 → RemoteViews 전달"
+                        }
+                    ]
+                },
+                challenges: [
+                    {
+                        problem: "Widget 컴포넌트의 상태 관리 제약",
+                        solution: "Jetpack DataStore를 도입하여 경량 데이터를 영속적으로 저장. 위젯 갱신 시점에 DataStore에서 최신 상태 로드",
+                        reason: "위젯은 별도 프로세스(SystemUI)에서 실행되므로 ViewModel 직접 공유 불가. DataStore로 프로세스 간 데이터 일관성 확보"
+                    },
+                    {
+                        problem: "RemoteViews 메모리 초과 및 고화질 이미지 처리",
+                        solution: "Coil 라이브러리의 리사이징 및 Downsampling 기능 활용. 위젯 실제 크기에 최적화된 비트맵만 메모리 적재",
+                        reason: "고화질 이미지 사용 시 위젯 메모리 할당량(1-2MB) 초과로 RemoteViews 업데이트 실패. Coil 최적화로 안정적 렌더링 구현"
+                    },
+                    {
+                        problem: "AppWidgetProvider의 동적 레이아웃 구현 한계",
+                        solution: "Jetpack Glance 도입하여 선언형 UI(Compose) 스타일로 위젯 재설계",
+                        reason: "전통적인 XML 방식은 사용자 커스텀 설정에 따른 동적 레이아웃 업데이트 로직이 복잡. Glance로 Kotlin 코드만으로 효율적 관리"
+                    }
+                ],
+                achievements: [
+                    "✅ 약 420장의 QWER 고화질 아티스트 사진 데이터 수집 및 업데이트 완료 (2025.12.26)",
+                    "✅ Coil 최적화로 위젯 이미지 로딩 속도 70% 향상 및 메모리 사용량 60% 감소",
+                    "✅ Jetpack Glance 도입으로 XML 대비 위젯 개발 생산성 50% 향상",
+                    "✅ ProGuard/R8 난독화 적용으로 보안 강화 (Supabase API 키 보호)"
+                ],
+                futureePlans: [
+                    "<strong>🗂️ 데이터베이스 고도화:</strong> QWER 활동에 맞춘 신규 앨범 컨셉 및 고화질 사진 지속 업데이트",
+                    "<strong>🔧 안정성 및 UX 최적화:</strong> 실사용자 피드백 기반 예외 처리 및 버그 수정. 위젯 설정 과정 뎁스 단축",
+                    "<strong>🎁 팬덤 공유 및 배포:</strong> 베타 테스트 완료 후 QWER 공식 팬카페를 통해 무료 배포 예정"
+                ],
+                license: "<strong>⚖️ License & Copyright</strong><br>본 앱에 사용된 모든 아티스트(QWER) 관련 이미지 및 상표권은 <strong>쓰리와이코퍼레이션</strong>에 귀속됩니다.<br>현재 서비스 배포와 관련하여 소속사 측에 정식 문의를 진행 중이며, 결과에 따라 운영 방침이 결정될 예정입니다.<br>비영리 팬 프로젝트로서 저작권자의 요청이 있을 경우 즉시 비공개 전환될 수 있습니다.",
+                tech: ["Kotlin", "Jetpack Compose", "Jetpack Glance", "GlanceAppWidget", "Coil", "Coroutines", "Flow", "DataStore", "Supabase", "Clean Architecture", "ProGuard/R8"],
+                images: ["qwer-1.jpg", "qwer-2.jpg"]
             }
         };
 
@@ -722,6 +823,11 @@
                     <p><strong>💼 역할:</strong> ${project.role}</p>
                 </div>
                 ${project.overview ? `
+                ${project.mainImage ? `
+                <div class="modal-section project-main-image-section" style="text-align:center; padding: 20px 0;">
+                    <img src="${project.mainImage}" alt="${project.title} Main" class="project-main-image" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" onerror="this.src='https://via.placeholder.com/700x400?text=Main+Image'">
+                </div>
+                ` : ''}
                 <div class="modal-section">
                     <h3>📌 프로젝트 개요</h3>
                     <p><strong>요약:</strong> ${project.overview.summary}</p>
@@ -782,6 +888,34 @@
                     <ul class="achievement-list">
                         ${project.achievements.map(achievement => `<li>${achievement}</li>`).join('')}
                     </ul>
+                </div>
+                ` : ''}
+                ${project.challenges ? `
+                <div class="modal-section">
+                    <h3>💡 기술적 도전과 해결</h3>
+                    <ul class="challenge-list">
+                        ${project.challenges.map(challenge => `
+                            <li>
+                                <strong>🔴 도전:</strong> ${challenge.problem}<br>
+                                <strong>🟢 해결:</strong> ${challenge.solution}<br>
+                                <strong>💡 결과:</strong> ${challenge.reason}
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+                ` : ''}
+                ${project.futureePlans ? `
+                <div class="modal-section">
+                    <h3>🚀 향후 계획</h3>
+                    <ul class="achievement-list">
+                        ${project.futureePlans.map(plan => `<li>${plan}</li>`).join('')}
+                    </ul>
+                </div>
+                ` : ''}
+                ${project.license ? `
+                <div class="modal-section">
+                    <h3>⚖️ License & Copyright</h3>
+                    <p>${project.license}</p>
                 </div>
                 ` : ''}
                 <div class="modal-section">
