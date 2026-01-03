@@ -316,10 +316,13 @@
                        onclick="openProjectModal('qwer'); return false;">View Project →</a>
                 </div>
                 <div class="card">
-                    <div class="tags">#Android #Retrofit2 #Hilt</div>
-                    <h3>Project Name 02</h3>
-                    <p>날씨 정보를 제공하는 Android 애플리케이션을 개발했습니다. Clean Architecture를 적용하여 테스트 가능하고 유지보수하기
-                        쉬운 코드 구조를 만들었습니다.</p>
+                    <div class="tags">#Android #Kotlin #Compose #Clean Architecture</div>
+                    <h3>던전앤파이터 캐릭터 정보 조회</h3>
+                    <p>
+                        <strong>DNF Open API를 활용한 캐릭터 정보 조회 애플리케이션</strong><br>
+                        <span class="project-detail">Clean Architecture와 Jetpack Compose를 실제 적용하며 설계, 개발, 테스트 과정을 경험한 학습
+                        프로젝트입니다.</span>
+                    </p>
                     <a href="#" class="more-link"
                        onclick="openProjectModal('project2'); return false;">View Project →</a>
                 </div>
@@ -428,41 +431,79 @@
                 images: ["project1-1.jpg", "project1-2.jpg"]
             },
             project2: {
-                title: "Project Name 02",
-                tags: ["Android", "Retrofit2", "Hilt", "Clean Architecture"],
-                period: "2022.09 - 2022.12",
-                team: "3명 (Android 2, Backend 1)",
+                title: "던전앤파이터 캐릭터 정보 조회",
+                tags: ["Android", "Kotlin", "Compose", "Clean Architecture"],
+                period: "2023.03 - 2023.05 (약 8주)",
+                team: "1명 (Solo Project)",
                 role: "Android Developer",
+                mainImage: "던파메인.png",
                 overview: {
-                    summary: "실시간 날씨 정보 제공 Android 애플리케이션",
-                    background: "OpenWeather API를 활용하여 정확한 날씨 정보를 제공하고, Clean Architecture로 테스트 가능한 코드 구조를 구축하였습니다."
+                    summary: "던전앤파이터(DNF) Open API를 활용한 캐릭터 정보 조회 애플리케이션",
+                    background: "<div style='margin-bottom: 15px;'><strong>🎯 프로젝트 목적:</strong> Clean Architecture와 Jetpack Compose의 실전 적용을 위한 학습 프로젝트입니다.</div><div style='margin-bottom: 15px;'><strong>📚 학습 목표:</strong> 이론으로만 접했던 Clean Architecture 계층 구조를 실제 프로젝트에 적용하고, Jetpack Compose의 선언형 UI 패러다임을 체득하기 위해 시작했습니다.</div><div><strong>✅ 기대 효과:</strong> 네오플의 공식 Open API를 활용하여 실시간 게임 데이터를 처리하고, 테스트 가능한 코드 작성 및 유지보수성 높은 아키텍처 설계 역량을 향상시킬 수 있었습니다.</div>"
                 },
-                description: "날씨 정보를 제공하는 Android 애플리케이션을 개발했습니다. Clean Architecture를 적용하여 테스트 가능하고 유지보수하기 쉬운 코드 구조를 만들었습니다.",
-                features: [
-                    "<strong>Hilt @Inject</strong>로 Repository, UseCase를 ViewModel에 주입하여 의존성 결합도 감소",
-                    "<strong>Clean Architecture</strong> 3계층 구조: Presentation - Domain - Data로 분리",
-                    "<strong>Flow.collect()</strong>로 날씨 데이터 실시간 수집 → UI 자동 업데이트",
-                    "<strong>JUnit4 + Mockito</strong>로 UseCase 및 Repository 단위 테스트 작성"
-                ],
-                architecture: {
-                    pattern: "Clean Architecture + MVVM",
-                    description: "Domain 계층에서 비즈니스 로직을 담당하고, Data 계층에서 외부 API 및 DB 접근을 처리하여 계층 간 의존성을 역전",
-                    dataFlow: "Presentation (UI) ↔ Domain (UseCase) ↔ Data (Repository) ↔ API/DB"
-                },
-                challenges: [
+                description: "던전앤파이터 Open API를 활용한 캐릭터 정보 조회 애플리케이션. Clean Architecture와 Jetpack Compose 기능 연습 및 테스트를 위한 학습 프로젝트입니다.",
+                uiScreenshots: [
                     {
-                        problem: "의존성 주입 설정의 복잡도 증가",
-                        solution: "Hilt의 @Module과 @Provides를 활용하여 의존성 그래프 자동 생성",
-                        reason: "보일러플레이트 코드 70% 감소, DI 설정 시간 단축"
+                        title: "캐릭터 검색",
+                        description: "던전앤파이터 캐릭터 검색 메인 화면 및 서버 선택",
+                        image: "캐릭터검색.png"
+                    },
+                    {
+                        title: "능력치 정보",
+                        description: "캐릭터의 상세 능력치 및 스탯 정보 조회",
+                        image: "능력치정보검색.png"
+                    },
+                    {
+                        title: "아바타 검색",
+                        description: "캐릭터 장착 아바타 아이템 정보 조회",
+                        image: "아바타검색.png"
+                    },
+                    {
+                        title: "안개융화 검색",
+                        description: "안개융화 아이템 상세 정보 및 옵션 조회",
+                        image: "안개융화검색.png"
                     }
                 ],
-                achievements: [
-                    "✅ Clean Architecture 적용으로 단위 테스트 작성 용이",
-                    "✅ 코드 커버리지 80% 달성",
-                    "✅ API 응답 시간 최적화로 평균 0.8초 이내 로딩"
+                features: [
+                    "<strong>🏗️ Clean Architecture 3계층 구조 학습 및 적용</strong><br>" +
+                    "• <strong>목적:</strong> 이론으로만 접했던 Clean Architecture를 실제 프로젝트에 체계적으로 적용<br>" +
+                    "• <strong>학습 내용:</strong> Presentation - Domain - Data 계층 명확한 역할 분리 및 의존성 방향 제어<br>" +
+                    "• <strong>구현:</strong> <strong>Domain Layer</strong>에 비즈니스 로직(UseCase) 배치 → 플랫폼 독립적 순수 Kotlin 코드<br>" +
+                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ <strong>Data Layer</strong>에서 API 통신(Retrofit) 및 로컬 캐싱(Room) 처리<br>" +
+                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ <strong>Presentation Layer</strong>에서 Compose UI 렌더링 및 ViewModel 상태 관리",
+                    "<strong>🎨 Jetpack Compose 선언형 UI 패러다임 학습</strong><br>" +
+                    "• <strong>목적:</strong> XML 기반 명령형 UI를 벗어나 Compose 선언형 UI 방식 체득<br>" +
+                    "• <strong>학습 내용:</strong> State Hoisting, Recomposition, Side Effect 등 Compose 핵심 개념 실습<br>" +
+                    "• <strong>구현:</strong> <strong>remember</strong>, <strong>rememberSaveable</strong>로 상태 관리 및 화면 회전 대응<br>" +
+                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ <strong>LazyColumn</strong>으로 캐릭터 리스트 성능 최적화<br>" +
+                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ <strong>Material3 Design System</strong> 적용으로 일관된 UI/UX 구현",
+                    "<strong>⚡ Kotlin Coroutine + Flow를 활용한 비동기 처리 학습</strong><br>" +
+                    "• <strong>목적:</strong> 네트워크 요청 및 데이터 스트림 처리를 위한 Coroutine/Flow 패턴 학습<br>" +
+                    "• <strong>학습 내용:</strong> suspend 함수, Flow 연산자, StateFlow/SharedFlow 차이점 실습<br>" +
+                    "• <strong>구현:</strong> <strong>Dispatchers.IO</strong>로 API 호출을 백그라운드에서 처리<br>" +
+                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ <strong>StateFlow</strong>로 ViewModel에서 UI 상태를 발행<br>" +
+                    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ Compose <strong>collectAsState()</strong>로 실시간 UI 업데이트 구현"
                 ],
-                tech: ["Kotlin", "Clean Architecture", "Hilt", "Retrofit2", "Flow", "JUnit"],
-                github: "https://github.com/yourname/project2",
+                architecture: {
+                    patterns: [
+                        {
+                            name: "Clean Architecture 3계층 구조 (학습 프로젝트)",
+                            description: "<strong>Presentation Layer:</strong> Jetpack Compose UI + ViewModel (화면 상태 관리) <br> <strong>Domain Layer:</strong> UseCase (비즈니스 로직), Entity (도메인 모델) - 순수 Kotlin <br> <strong>Data Layer:</strong> Repository 구현체, API Service (Retrofit), Local DB (Room) <br> <strong>핵심 원칙:</strong> 의존성 방향은 항상 외부에서 내부로 (Presentation → Domain ← Data)",
+                            dataFlow: "UI (Compose) → ViewModel → UseCase → Repository Interface → Repository 구현 → API/DB"
+                        },
+                        {
+                            name: "Jetpack Compose 상태 관리 패턴",
+                            description: "<strong>State Hoisting:</strong> 하위 Composable은 상태를 소유하지 않고 상위에서 주입 <br> <strong>ViewModel Integration:</strong> <strong>collectAsState()</strong>로 StateFlow 구독 → Recomposition 트리거 <br> <strong>Side Effect 처리:</strong> <strong>LaunchedEffect</strong>로 일회성 이벤트 처리 (네비게이션, 토스트 등)"
+                        }
+                    ]
+                },
+                achievements: [
+                    "✅ Clean Architecture 3계층 구조를 실제 프로젝트에 성공적으로 적용하여 이론과 실무 격차 해소",
+                    "✅ Jetpack Compose로 100% 선언형 UI 구현 (XML 0%) → Compose 핵심 개념 체득",
+                    "✅ 던전앤파이터 Open API 연동 및 실시간 캐릭터 데이터 조회 성공"
+                ],
+                tech: ["Kotlin", "Jetpack Compose", "Clean Architecture", "Retrofit2", "Coroutine", "Flow"],
+                github: "https://github.com/cho123456789/NeopleProject/tree/clean_%EC%95%84%ED%82%A4%ED%85%8D%EC%B3%90",
                 images: ["project2-1.jpg", "project2-2.jpg"]
             },
             dronecop: {
@@ -680,7 +721,7 @@
             qwer: {
                 title: "📸 QWER Photo Widget",
                 tags: ["Android", "Kotlin", "Jetpack Compose", "Glance"],
-                period: "2025.07 - 2025.12 (약 22주)",
+                period: "2024.08 - 2024.10 (약 12주)",
                 team: "1명 (Solo Project)",
                 role: "Android Developer",
                 mainImage: "QWER메인.jpg",
@@ -769,6 +810,7 @@
                 ],
                 license: "<strong>⚖️ License & Copyright</strong><br>본 앱에 사용된 모든 아티스트(QWER) 관련 이미지 및 상표권은 <strong>쓰리와이코퍼레이션</strong>에 귀속됩니다.<br>비영리 팬 프로젝트로서 저작권자의 요청 시 즉시 비공개 전환될 수 있습니다.",
                 tech: ["Kotlin", "Jetpack Compose", "Jetpack Glance", "GlanceAppWidget", "Coil", "Coroutines", "Flow", "DataStore", "Supabase", "Clean Architecture", "ProGuard/R8"],
+                github: "https://github.com/cho123456789/qwer_test_kt",
                 images: ["qwer-1.jpg", "qwer-2.jpg"]
             }
         };
@@ -804,6 +846,12 @@
                     <p><strong>🗓️ 기간:</strong> ${project.period}</p>
                     <p><strong>👥 팀 구성:</strong> ${project.team}</p>
                     <p><strong>💼 역할:</strong> ${project.role}</p>
+                    ${project.github ? `<p><strong>🔗 GitHub:</strong> <a href="${project.github}" target="_blank" style="color: #4A90E2; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 6px;">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+    </svg>
+    View Repository
+</a></p>` : ''}
                 </div>
                 ${project.overview ? `
                 <div class="modal-section">
@@ -917,6 +965,14 @@
                             <path d="M449.38,231l-71.65-39.46L310.36,256l67.37,64.43L449.38,281C468.87,270.23,468.87,241.77,449.38,231Z"/>
                         </svg>
                         Play Store
+                    </a>
+                    ` : ''}
+                    ${project.github ? `
+                    <a href="${project.github}" target="_blank" class="btn-github" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: #24292e; color: white; text-decoration: none; border-radius: 8px; font-weight: 500; transition: all 0.3s ease;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        GitHub
                     </a>
                     ` : ''}
                 </div>
