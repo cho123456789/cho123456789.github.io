@@ -397,6 +397,7 @@
                 period: "2023.01 - 2023.06",
                 team: "4명 (Android 2, Backend 1, Designer 1)",
                 role: "Android Developer",
+                participation: "50%",
                 overview: {
                     summary: "사용자 친화적인 모바일 쇼핑 앱",
                     background: "복잡한 상품 검색 및 구매 프로세스를 간소화하고, 사용자 경험을 개선하기 위해 개발하였습니다."
@@ -436,6 +437,7 @@
                 period: "2023.03 - 2023.05 (약 8주)",
                 team: "1명 (Solo Project)",
                 role: "Android Developer",
+                participation: "100%",
                 mainImage: "던파메인.png",
                 overview: {
                     summary: "던전앤파이터(DNF) Open API를 활용한 캐릭터 정보 조회 애플리케이션",
@@ -512,6 +514,7 @@
                 period: "2025.09 - 2026.01",
                 team: "4명 (Android 2, Backend 2)",
                 role: "Android Developer",
+                participation: "70%",
                 appIcon: "dronecop-icon.png",
                 playStore: "https://play.google.com/store/apps/details?id=kr.co.igis.safehomecomingapp&hl=ko",
                 overview: {
@@ -625,6 +628,7 @@
                 period: "2023.02 - 2023.12",
                 team: "3명 (Android 2, Backend 1)",
                 role: "Android Developer",
+                participation: "70%",
                 appIcon: "ycallme.jpg",
                 playStore: "https://play.google.com/store/apps/details?id=com.yhdb.ycallme",
                 overview: {
@@ -723,6 +727,7 @@
                 period: "2024.08 - 2024.10 (약 12주)",
                 team: "1명 (Solo Project)",
                 role: "Android Developer",
+                participation: "100%",
                 mainImage: "QWER메인.jpg",
                 overview: {
                     summary: "걸그룹 밴드 QWER의 홈 화면 위젯 애플리케이션",
@@ -845,6 +850,7 @@
                     <p><strong>🗓️ 기간:</strong> ${project.period}</p>
                     <p><strong>👥 팀 구성:</strong> ${project.team}</p>
                     <p><strong>💼 역할:</strong> ${project.role}</p>
+                    ${project.participation ? `<p><strong>📊 참여율:</strong> ${project.participation}</p>` : ''}
                     ${project.github ? `<p><strong>🔗 GitHub:</strong> <a href="${project.github}" target="_blank" style="color: #4A90E2; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 6px;">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
