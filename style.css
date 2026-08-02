@@ -1625,3 +1625,87 @@ footer {
 .modal-section.ui-collapsed h3 {
     margin-bottom: 0;
 }
+
+.artist-gallery-section {
+    background: #f8fafc;
+}
+
+.artist-gallery-intro,
+.artist-gallery-description {
+    color: #5f6b7a;
+}
+
+.artist-switcher {
+    display: flex;
+    gap: 10px;
+    margin: 16px 0;
+}
+
+.artist-switch-button {
+    border: 1px solid #d9e1ea;
+    border-radius: 999px;
+    background: #fff;
+    color: #52606d;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+    padding: 9px 18px;
+    transition: 0.2s ease;
+}
+
+.artist-switch-button:hover,
+.artist-switch-button.active {
+    background: var(--android-primary);
+    border-color: var(--android-primary);
+    color: #fff;
+}
+
+.artist-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+}
+
+.artist-gallery-panel[data-artist-panel="rescene"] .artist-photo-grid {
+    margin-top: 36px;
+}
+
+.artist-photo {
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+}
+
+.artist-empty-message {
+    margin: 0;
+    padding: 22px;
+    border: 1px dashed #b9c6d4;
+    border-radius: 12px;
+    background: #fff;
+    color: #6b7280;
+    text-align: center;
+}
+
+.project-ui-switcher {
+    margin: 0 0 20px;
+    gap: 6px;
+    grid-column: 1 / -1;
+    align-self: start;
+}
+
+.project-ui-switcher .artist-switch-button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+}
+
+.artist-ui-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.artist-ui-panel {
+    grid-column: 1 / -1;
+}
