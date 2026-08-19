@@ -1,0 +1,302 @@
+/* Softer, more professional hero treatment */
+.hero h1 {
+  font-size: clamp(2.8rem, 4.8vw, 5.2rem);
+  line-height: .97;
+  letter-spacing: -.075em;
+}
+
+.profile-summary img {
+  filter: none;
+  mix-blend-mode: normal;
+  border-radius: 4px;
+}
+
+.profile-summary {
+  align-items: stretch;
+  order: 1;
+  border-left: 0;
+  border-right: 1px solid var(--line);
+  padding-left: 0;
+  padding-right: 2.5rem;
+  display: block;
+}
+
+.profile-summary img {
+  display: block;
+  width: min(100%, 230px);
+  height: 270px;
+  object-fit: cover;
+  object-position: center top;
+  margin-bottom: 1.4rem;
+}
+
+.profile-summary h2 {
+  font-size: 1.8rem;
+  margin: .5rem 0;
+}
+
+.profile-summary .label { font-size: .72rem; }
+
+.profile-summary p:not(.label) {
+  font-size: .82rem;
+  line-height: 1.6;
+}
+
+.profile-summary a {
+  display: inline-block;
+  margin-top: .2rem;
+  font-size: .74rem;
+}
+
+.competency-grid span {
+  font-size: .76rem;
+}
+
+.competency-grid h3 {
+  font-size: 1.55rem;
+}
+
+.competency-grid p {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.competency-grid ul {
+  font-size: .8rem;
+  line-height: 1.95;
+}
+
+.hero-title {
+  order: 2;
+}
+
+@media (min-width: 761px) {
+  .hero {
+    grid-template-columns: minmax(200px, .55fr) minmax(0, 1.45fr);
+    gap: 4vw;
+  }
+
+  .hero-title {
+    padding-left: 1rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero h1 { font-size: 2.75rem; }
+  .hero-title { order: 1; }
+  .profile-summary {
+    order: 2;
+    border-right: 0;
+    border-left: 0;
+    padding-right: 0;
+    display: grid;
+    grid-template-columns: 105px 1fr;
+    gap: 1rem;
+    align-items: end;
+  }
+  .profile-summary img {
+    width: 105px;
+    height: 135px;
+    margin: 0;
+  }
+  .profile-summary h2 {
+    font-size: 1.4rem;
+  }
+  .competency-grid h3 { font-size: 1.35rem; }
+  .competency-grid p { font-size: .9rem; }
+  .competency-grid ul { font-size: .74rem; }
+}
+
+footer {
+  background: var(--paper);
+  color: var(--ink);
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+footer > div {
+  margin-top: 0;
+  border-top: 0;
+  color: var(--muted);
+}
+
+footer > div a {
+  color: var(--ink);
+}
+
+.implementation-copy p {
+  margin: 0;
+}
+
+.implementation-copy ul {
+  margin: .65rem 0 0;
+  padding-left: 1rem;
+  font-size: .8rem;
+  line-height: 1.65;
+}
+
+.implementation-copy li + li { margin-top: .35rem; }
+
+.combined-experience {
+  margin-bottom: 5rem;
+  padding: 2.2rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.capability-subhead {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+}
+
+.capability-subhead p {
+  margin: 0;
+  font: 500 .66rem 'DM Mono', monospace;
+  letter-spacing: .08em;
+  color: var(--muted);
+}
+
+.capability-subhead h3 {
+  margin: 0;
+  font: 700 1.7rem Manrope, sans-serif;
+  letter-spacing: -.05em;
+}
+
+.combined-experience .experience-list article:last-child {
+  border-bottom: 0;
+}
+
+.combined-experience .date,
+.combined-experience .work-tags {
+  font-size: .78rem;
+}
+
+.combined-experience .experience-list h3 {
+  font-size: 1.2rem;
+}
+
+.combined-experience .experience-list h3 + p {
+  font-size: .8rem;
+}
+
+.combined-experience .work b {
+  font-size: 1.05rem;
+}
+
+.combined-experience .work p {
+  font-size: .96rem;
+  line-height: 1.7;
+}
+
+.combined-experience .work-tags span {
+  padding: .38rem .48rem;
+}
+
+.competency-subhead {
+  margin: 0 0 1.25rem;
+  font: 600 .9rem 'DM Mono', monospace;
+  letter-spacing: .1em;
+  color: var(--ink);
+}
+
+.projects {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.projects .label,
+.project-title .label,
+.evidence b {
+  color: var(--muted);
+}
+
+.project {
+  border-color: var(--line);
+}
+
+.project-title > a {
+  color: var(--accent);
+}
+
+.project-visual.drone img,
+.project-visual.ycall img {
+  max-width: 28%;
+  height: 72%;
+}
+
+.project-visual.binder {
+  background: #eee4e4;
+  padding: 1.5rem;
+  gap: .8rem;
+}
+
+.project-visual.binder img {
+  width: 29%;
+  max-width: none;
+  height: 78%;
+  object-fit: cover;
+  border: 1px solid #cbbdc0;
+}
+
+.evidence,
+.evidence > div {
+  border-color: var(--line);
+}
+
+
+.hero {
+  min-height: 410px;
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
+.section-heading {
+  margin-bottom: 2.5rem;
+}
+
+.hero-title > .label,
+.section-heading > .label {
+  font-size: .9rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  color: var(--ink);
+}
+
+.hero-title > .label {
+  display: block;
+  padding: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: .035em;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  font-family: Arial, Pretendard, sans-serif;
+}
+
+.hero-intro {
+  max-width: 740px;
+  font-size: 1.42rem;
+  line-height: 1.65;
+  color: var(--ink);
+  font-family: Arial, Pretendard, sans-serif;
+}
+
+@media (max-width: 760px) {
+  .hero { min-height: 0; padding-top: 3.5rem; padding-bottom: 3.5rem; }
+  .hero-title > .label,
+  .section-heading > .label { font-size: .78rem; }
+  .hero-title > .label { padding: 0; font-size: 1.8rem; margin-bottom: 1.25rem; }
+  .hero-intro { font-size: 1.08rem; }
+  .combined-experience { margin-bottom: 3rem; padding: 1.3rem; }
+  .capability-subhead { display: block; }
+  .capability-subhead h3 { margin-top: .5rem; }
+  .combined-experience .experience-list h3 { font-size: 1.05rem; }
+  .combined-experience .work b { font-size: .96rem; }
+  .combined-experience .work p { font-size: .88rem; }
+  .competency-subhead { font-size: .78rem; }
+}
