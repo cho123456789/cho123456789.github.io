@@ -238,6 +238,7 @@ footer > div a {
   max-width: none;
   height: 78%;
   object-fit: cover;
+  object-position: center;
   border: 1px solid #cbbdc0;
 }
 

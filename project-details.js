@@ -111,9 +111,9 @@ if (projectsSection && !projectsSection.querySelector('.photo-binder')) {
   photoBinder.className = 'project photo-binder reverse';
   photoBinder.innerHTML = `
     <div class="project-visual binder">
-      <img src="KakaoTalk_20260819_204432833.jpg" alt="포토바인더 포토카드 크롭 화면">
-      <img src="KakaoTalk_20260819_204432833_01.jpg" alt="포토바인더 포토카드 자동 스캔 화면">
-      <img src="KakaoTalk_20260819_204432833_02.jpg" alt="포토바인더 포토카드 등록 화면">
+      <img src="바인더표지1.jpg" alt="포토바인더 바인더 표지 1">
+      <img src="바인더표지2.jpg" alt="포토바인더 바인더 표지 2">
+      <img src="바인더3.jpg" alt="포토바인더 바인더 표지 3">
     </div>
     <div class="project-detail">
       <div class="project-title"><div><p class="label">SIDE PROJECT</p><h3>포토 바인더 <em>Photo Binder</em></h3></div><a href="https://github.com/cho123456789/photo_card" target="_blank" rel="noreferrer">GitHub ↗</a></div>
