@@ -55,9 +55,9 @@ document.querySelectorAll('.section-heading h2').forEach(title => title.remove()
 document.querySelector('#projects .section-heading .label').textContent = '03 / PROJECTS';
 
 const resceneWidgetImages = [
-  ['리센느메인.jpg', '리센느 포토 위젯 메인 화면'],
-  ['리센느_메인화면.gif', '리센느 포토 위젯 앱 화면'],
-  ['리센느_위젯화면.gif', '리센느 포토 위젯 설정 화면']
+  ['리센느_메인화면.gif', '리센느 포토 위젯 메인 화면'],
+  ['리센느_배경화면.gif', '리센느 포토 위젯 배경화면'],
+  ['리센느_위젯화면.gif', '리센느 포토 위젯 위젯 화면']
 ];
 
 document.querySelectorAll('.project-visual.widget img').forEach((image, index) => {
@@ -111,8 +111,8 @@ if (projectsSection && !projectsSection.querySelector('.photo-binder')) {
   photoBinder.className = 'project photo-binder reverse';
   photoBinder.innerHTML = `
     <div class="project-visual binder">
-      <img src="바인더표지1.jpg" alt="포토바인더 바인더 표지 1">
-      <img src="바인더표지2.jpg" alt="포토바인더 바인더 표지 2">
+      <img src="바인더1.jpg" alt="포토바인더 바인더 화면 1">
+      <img src="바인더2.jpg" alt="포토바인더 바인더 화면 2">
       <img src="바인더3.jpg" alt="포토바인더 바인더 표지 3">
     </div>
     <div class="project-detail">
@@ -126,6 +126,7 @@ if (projectsSection && !projectsSection.querySelector('.photo-binder')) {
     </div>
   `;
   projectsSection.append(photoBinder);
+
 }
 
 document.querySelectorAll('.project').forEach((project, index) => {
