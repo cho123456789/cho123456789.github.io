@@ -221,6 +221,12 @@ footer > div a {
   color: var(--accent);
 }
 
+.project-period {
+  margin: 0;
+  font: 500 .76rem 'DM Mono', monospace;
+  color: var(--muted);
+}
+
 .project-visual.drone img,
 .project-visual.ycall img {
   max-width: 28%;

@@ -1,13 +1,13 @@
 const projectImplementationDetails = [
   [
-    'REST API로 드론 호출·순찰 상태·위치 데이터를 연동하고, 화면 상태에 따라 사용자에게 진행 상황을 표시했습니다.',
-    'Flutter와 Riverpod을 활용해 호출·위치·위험요소 정보를 화면 단위 상태로 관리했습니다.',
-    '위치 추적과 위험요소 표시 흐름을 구성해 보호자가 필요한 정보를 빠르게 확인할 수 있도록 구현했습니다.'
+    'Flutter·Kotlin 네이티브 MethodChannel 연동 기반 백그라운드 위치 측정',
+    '네이버 지도·마커 API 및 REST API 기반 드론·사용자 실시간 위치 확인·알림',
+    'FCM 기반 세이프존 및 안전 경로 이탈 알림'
   ],
   [
-    'Jetpack Compose 기반 화면으로 탐지 결과와 차단 상태를 직관적으로 확인할 수 있도록 UI를 개선했습니다.',
-    'Retrofit2를 통해 탐지·차단 관련 API를 연동하고, 비동기 응답을 화면 상태에 반영했습니다.',
-    'AI 탐지 결과와 KISA 데이터를 활용하는 기능의 유지보수 및 고도화에 참여했습니다.'
+    'Java/XML 기반 레거시 Android 화면의 Kotlin·Jetpack Compose 전환',
+    'REST API·Retrofit2 통신, Room·SharedPreferences 데이터 관리',
+    'Figma 기반 UI 적용 및 QA팀 협업 기반 버그 개선'
   ],
   [
     'Jetpack Glance와 DataStore를 활용해 앱에서 설정한 데이터를 홈 화면 위젯과 공유했습니다.',
@@ -53,6 +53,50 @@ if (competencySection && experienceSection) {
 document.querySelector('.hero-title h1')?.remove();
 document.querySelectorAll('.section-heading h2').forEach(title => title.remove());
 document.querySelector('#projects .section-heading .label').textContent = '03 / PROJECTS';
+
+const droneCopProject = document.querySelector('#projects .project');
+if (droneCopProject) {
+  const droneCopDetail = droneCopProject.querySelector('.project-detail');
+  droneCopDetail.innerHTML = `
+    <div class="project-title">
+      <div><p class="label">COMPANY PROJECT</p><h3>드로니캅 <em>Android·Flutter 어린이 안전 서비스</em></h3></div>
+      <a href="https://play.google.com/store/apps/details?id=kr.co.igis.safehomecomingapp&hl=ko" target="_blank" rel="noreferrer">Google Play Store에서 보기 ↗</a>
+    </div>
+    <p class="project-period">기간: 2024.11 - 2026.02 / 역할: 모바일 개발</p>
+    <p class="project-overview">드론·GPS 위치 정보와 실시간 알림을 결합한 어린이 안전 등하교 서비스 모바일 앱 개발·상용화</p>
+    <div class="evidence">
+      <div class="implementation"><b>기능 구현</b><p>실시간 위치 및 안전 알림 기능 개발</p></div>
+      <div><b>운영·배포</b><p>Firebase Crashlytics 기반 크래시 로그 분석·안정성 개선<br>Google Play Console·App Store Connect 배포·릴리즈 관리</p></div>
+      <div><b>현장 검증</b><p>대덕초등학교·지구대 현장 시연 3회 피드백 기반 GPS 오차·알림 지연 개선</p></div>
+      <div><b>기술</b><p>Flutter · Kotlin · Riverpod · MethodChannel · Firebase FCM · REST API · 네이버 지도 API</p></div>
+    </div>
+  `;
+}
+
+const yCallMeProject = document.querySelector('.project-visual.ycall')?.closest('.project');
+if (yCallMeProject) {
+  const yCallMeDetail = yCallMeProject.querySelector('.project-detail');
+  yCallMeDetail.innerHTML = `
+    <div class="project-title">
+      <div><p class="label">COMPANY PROJECT</p><h3>와이콜미 <em>AI 기반 악성 앱 탐지 보안 솔루션</em></h3></div>
+      <a href="https://play.google.com/store/apps/details?id=com.yhdatabase.solution.ycall&hl=ko" target="_blank" rel="noreferrer">Google Play Store에서 보기 ↗</a>
+    </div>
+    <p class="project-period">기간: 2023.02 - 2024.01 / 역할: Android 개발</p>
+    <p class="project-overview">실시간 악성 앱 탐지·보안 대응 기능을 제공하는 Android 애플리케이션 개발·운영</p>
+    <div class="evidence">
+      <div class="implementation"><b>기능 구현</b><p>Android UI·데이터 관리 기능 개발</p></div>
+      <div><b>검증·배포</b><p>전시회 사용자 피드백 기반 버그 수정<br>Google Play Store 출시·운영, 2024년 KISA 협력과제 1위 수상 기여</p></div>
+      <div><b>기술</b><p>Kotlin · Jetpack Compose · Coroutines · Flow · MVVM · Retrofit2 · Room · REST API</p></div>
+    </div>
+  `;
+}
+
+const photoWidgetEvidence = document.querySelector('.project-visual.widget')?.closest('.project')?.querySelector('.evidence');
+if (photoWidgetEvidence && !photoWidgetEvidence.querySelector('.validation-deployment')) {
+  photoWidgetEvidence.insertAdjacentHTML('beforeend', `
+    <div class="validation-deployment"><b>검증·배포</b><p>각 팬 커뮤니티·SNS 배포, Firebase Analytics 기반 사용자 관리</p></div>
+  `);
+}
 
 const resceneWidgetImages = [
   ['리센느_메인화면.gif', '리센느 포토 위젯 메인 화면'],
@@ -121,6 +165,7 @@ if (projectsSection && !projectsSection.querySelector('.photo-binder')) {
       <div class="evidence">
         <div><b>담당 역할</b><p>기획 · 디자인 · Flutter 개발</p></div>
         <div><b>주요 구현</b><p>바인더·슬롯 관리, 문서 스캐너 기반 카드 등록, 수집률·지출 금액 관리</p></div>
+        <div><b>검증·배포</b><p>Play Store 내부 테스트 등록 및 테스트 실행 준비 중</p></div>
         <div><b>사용 기술</b><p>Flutter · Dart · Riverpod · SQLite(sqflite) · Clean Architecture · ML Kit</p></div>
       </div>
     </div>
@@ -134,7 +179,7 @@ document.querySelectorAll('.project').forEach((project, index) => {
   const details = projectImplementationDetails[index];
   if (!evidence || !details) return;
 
-  const mainImplementation = evidence.children[1];
+  const mainImplementation = evidence.querySelector('.implementation') || evidence.children[1];
   const summary = mainImplementation?.querySelector('p');
   if (!mainImplementation || !summary) return;
 
