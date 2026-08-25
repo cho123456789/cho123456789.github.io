@@ -11,13 +11,14 @@ const projectImplementationDetails = [
   ],
   [
     'Jetpack Glance와 DataStore를 활용해 앱에서 설정한 데이터를 홈 화면 위젯과 공유했습니다.',
-    'Supabase에서 아티스트별 이미지 데이터를 조회하고, 콘텐츠를 확장할 수 있는 구조로 관리했습니다.',
-    'Coil로 이미지를 Bitmap으로 변환하고 캐싱해 위젯 이미지 렌더링을 최적화했습니다.'
+    'Supabase 기반 아티스트별 이미지 조회·확장 가능한 콘텐츠 관리 구조',
+    'Compose·위젯에 Coil·동일 ImageLoader 적용: AsyncImage·SubcomposeAsyncImage 상태 처리, ImageRequest 크기 최적화·crossfade, Bitmap 변환·캐시 정책 통일',
+    'GlanceAppWidget Provider·Receiver 역할 분리: Provider 화면·상태 구성, Receiver 이미지 다운로드·캐시·위젯 갱신'
   ],
   [
-    'Riverpod & Freezed 기반의 단방향 상태 관리(State Management)를 적용했습니다. 화면(UI)이 데이터를 직접 수정하지 않고, 상태 변경의 경로를 Notifier 한곳으로 모은 구조를 지향했습니다.',
-    '머신러닝 Kit을 활용한 모서리 보정 촬영 및 갤러리 이미지 크롭 기능으로 구성했습니다.',
-    'SQLite 로컬 저장소와 Riverpod 기반 상태 관리를 적용해 수집 현황·지출 금액·바인더별 진행률을 관리했습니다.'
+    'Riverpod·Freezed 기반 단방향 상태 관리',
+    'ML Kit 기반 모서리 보정 촬영·갤러리 이미지 크롭',
+    'SQLite 로컬 저장소·Riverpod 기반 수집 현황·지출 금액·바인더별 진행률 관리'
   ]
 ];
 
